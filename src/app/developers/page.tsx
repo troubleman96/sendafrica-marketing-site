@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Developers — SendAfrica SMS API reference",
     description:
-      "REST API for sending SMS across African mobile networks. JWT and API-key auth, idempotent sends, 25 TZS per part.",
+      "REST API for sending SMS across African mobile networks. JWT and API-key auth, idempotent sends, 25Tsh per part.",
   },
 };
 

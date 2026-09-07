@@ -110,9 +110,14 @@ export function LogoMarquee() {
                 href={logo.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex shrink-0 items-center opacity-90 transition-opacity hover:opacity-100"
+                className="flex shrink-0 items-center gap-3 opacity-90 transition-opacity hover:opacity-100"
               >
-                <img src={logo.src} alt={logo.alt} className="h-7 w-auto" />
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-8 w-8 shrink-0 rounded-full object-contain"
+                />
+                <span className="text-sm font-medium text-primary">{logo.alt}</span>
               </a>
             ))}
           </div>

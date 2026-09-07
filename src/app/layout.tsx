@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SendAfrica — Tanzania-first SMS automation API",
     description:
-      "REST API for sending SMS across African mobile networks. JWT and API-key auth, 25 TZS per SMS part, real-time delivery.",
+      "REST API for sending SMS across African mobile networks. JWT and API-key auth, 25Tsh per SMS part, real-time delivery.",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

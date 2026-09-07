@@ -44,7 +44,7 @@ export const features = [
 export const faqs = [
   {
     q: "How much does it cost to send an SMS?",
-    a: "SendAfrica is pay-as-you-go: 1 credit = 1 SMS part, priced at 25 TZS per part over SwalaSMS. Credits are bought in packages from GET /v1/packages, or as a custom voucher amount from GET /v1/vouchers/rate.",
+    a: "SendAfrica is pay-as-you-go: 1 credit = 1 SMS part, priced at 25Tsh per part over SwalaSMS. Credits are bought in packages from GET /v1/packages, or as a custom voucher amount from GET /v1/vouchers/rate.",
   },
   {
     q: "Do you support Nigeria / Kenya / international numbers?",
@@ -101,48 +101,17 @@ export const testimonials = [
 
 export const plans = [
   {
-    eyebrow: "Free",
-    name: "Starter",
-    price: "60",
-    unit: "req/min",
-    note: "Pay only for the SMS credits you use. 1 credit = 1 SMS part at 25 TZS.",
+    eyebrow: "Pay-as-you-go",
+    name: "Free",
+    price: "25Tsh",
+    unit: "/ SMS part",
+    note: "1 credit = 1 SMS part. No subscriptions, no hidden fees.",
     features: [
-      "60 requests per minute",
-      "Pay-as-you-go SMS credits",
       "Africa's Talking + SwalaSMS gateways",
       "JWT and SA- API key auth",
-    ],
-    highlighted: false,
-  },
-  {
-    eyebrow: "Pro",
-    name: "Growth",
-    price: "600",
-    unit: "req/min",
-    note: "Higher velocity and the full sender-ID + contact-list toolkit for growing teams.",
-    features: [
-      "600 requests per minute",
-      "Custom branded Sender IDs",
-      "Contact list management",
-      "Campaign scheduling",
-      "Mobile money top-ups (Snippe)",
+      "Real-time delivery tracking",
     ],
     highlighted: true,
-  },
-  {
-    eyebrow: "Enterprise",
-    name: "Scale",
-    price: "6,000",
-    unit: "req/min",
-    note: "Maximum throughput and dedicated support for high-volume senders. Contact sales for SLA terms.",
-    features: [
-      "6,000 requests per minute",
-      "Dedicated throughput",
-      "Priority 24/7 support",
-      "Custom rate limits",
-      "Audit logging",
-    ],
-    highlighted: false,
   },
 ];
 

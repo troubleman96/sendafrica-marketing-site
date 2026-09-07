@@ -1,14 +1,13 @@
-import Link from "next/link";
-import type { Metadata } from "next";
 import { CtaSection, FaqSection, PageHero, PricingSection } from "@/components/site/sections";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pricing — SendAfrica pay-as-you-go SMS",
   description:
-    "SendAfrica charges 25 TZS per SMS part (SwalaSMS) or 35 TZS via Africa's Talking. Plans set your rate limit; credits are bought in packages from the API.",
+    "SendAfrica charges 25Tsh per SMS part (SwalaSMS) or 35Tsh via Africa's Talking. Plans set your rate limit; credits are bought in packages from the API.",
   openGraph: {
     title: "Pricing — SendAfrica pay-as-you-go SMS",
-    description: "25 TZS per SMS part. Free 60, Pro 600, Enterprise 6,000 requests per minute.",
+    description: "25Tsh per SMS part. Pro 600, Enterprise 6,000 requests per minute.",
   },
 };
 
@@ -27,16 +26,6 @@ const tiers = [
     plan: "Enterprise",
     limit: "6,000 req/min",
     note: "High throughput with priority support. Contact sales for SLA terms.",
-  },
-];
-
-const packages = [
-  {
-    name: "Starter",
-    credits: 1000,
-    price: 20000,
-    currency: "TZS",
-    note: "Best for trying the API.",
   },
 ];
 
@@ -69,11 +58,11 @@ export default function Pricing() {
               </thead>
               <tbody>
                 {[
-                  { gateway: "SwalaSMS", sell: "25 TZS", cost: "13 TZS", limit: "pro plan" },
+                  { gateway: "SwalaSMS", sell: "25Tsh", cost: "13Tsh", limit: "pro plan" },
                   {
                     gateway: "Africa's Talking",
-                    sell: "35 TZS",
-                    cost: "22 TZS",
+                    sell: "35Tsh",
+                    cost: "22Tsh",
                     limit: "all plans",
                   },
                 ].map((r) => (
@@ -91,40 +80,6 @@ export default function Pricing() {
               concatenate in 153-character segments. Non-GSM-7 (emoji, Arabic, CJK) switches the
               whole message to UCS-2 at 70/67-character segments.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-background py-20">
-        <div className="container-sendafrica">
-          <h2 className="text-center text-[34px] leading-tight text-primary sm:text-[42px]">
-            Credit <span className="text-[var(--brand-bright)]">packages</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-            Buy credits in a package, or top up any amount as a pay-as-you-go voucher (35/32/30 TZS
-            per credit across tiers). Packages below are served live from GET /v1/packages — sign in
-            to your dashboard for the full, up-to-date list.
-          </p>
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {packages.map((p) => (
-              <article
-                key={p.name}
-                className="rounded-3xl border border-border bg-[var(--mist)] p-8 shadow-sendafrica-card"
-              >
-                <h3 className="text-[26px] text-primary">{p.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.note}</p>
-                <p className="mt-6 text-[40px] font-semibold text-primary">
-                  {p.price.toLocaleString()} {p.currency}
-                </p>
-                <p className="mt-1 text-[15px] text-muted-foreground">{p.credits} SMS credits</p>
-                <Link
-                  href="/contact"
-                  className="mt-8 block rounded-xl bg-[var(--brand)] px-6 py-3.5 text-center font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                >
-                  Buy credits
-                </Link>
-              </article>
-            ))}
           </div>
         </div>
       </section>

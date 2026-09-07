@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 };
 
 const metrics = [
-  { value: "25 TZS", label: "Per SMS part (SwalaSMS)" },
-  { value: "35 TZS", label: "Per SMS part (Africa's Talking)" },
+  { value: "25Tsh", label: "Per SMS part (SwalaSMS)" },
+  { value: "35Tsh", label: "Per SMS part (Africa's Talking)" },
   { value: "30s", label: "Campaign worker poll interval" },
   { value: "15 min", label: "JWT access token TTL" },
 ];
