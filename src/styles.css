@@ -315,12 +315,11 @@ html {
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ---------- Beliefs section ---------- */
-.beliefs-section article {
-  box-shadow: 0 -12px 40px -12px color-mix(in oklab, var(--brand-dark) 22%, transparent);
-}
+/* ---------- Beliefs section (scroll-reveal one-at-a-time) ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .beliefs-section article {
-    transform: none;
+  .beliefs-section .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
