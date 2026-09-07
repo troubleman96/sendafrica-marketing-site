@@ -228,9 +228,6 @@
   .relative {
     position: relative;
   }
-  .sticky {
-    position: sticky;
-  }
   .inset-0 {
     inset: 0px;
   }
@@ -401,9 +398,6 @@
   }
   .mb-1 {
     margin-bottom: var(--spacing);
-  }
-  .mb-8 {
-    margin-bottom: calc(var(--spacing) * 8);
   }
   .-ml-4 {
     margin-left: calc(var(--spacing) * -4);
@@ -906,6 +900,11 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-8 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
   }
   :where(.space-y-10 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -3173,32 +3172,15 @@ html {
 .nav-shell {
   transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.beliefs-card {
-  transform-origin: center top;
-  will-change: transform;
-}
-.beliefs-card > article {
+.beliefs-section article {
   box-shadow: 0 -12px 40px -12px var(--brand-dark);
   @supports (color: color-mix(in lab, red, red)) {
     box-shadow: 0 -12px 40px -12px color-mix(in oklab, var(--brand-dark) 22%, transparent);
   }
 }
-@supports (animation-timeline: view()) {
-  .beliefs-card > article {
-    animation: beliefs-shrink linear both;
-    animation-timeline: view();
-    animation-range: exit -10% exit 90%;
-  }
-}
-@keyframes beliefs-shrink {
-  to {
-    transform: scale(0.92) translateY(-10px);
-    filter: brightness(0.94);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .beliefs-card > article {
-    animation: none;
+  .beliefs-section article {
+    transform: none;
   }
 }
 @property --tw-translate-x {

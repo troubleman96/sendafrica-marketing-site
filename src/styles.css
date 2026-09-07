@@ -315,29 +315,12 @@ html {
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ---------- Beliefs sticky stack ---------- */
-.beliefs-card {
-  transform-origin: center top;
-  will-change: transform;
-}
-.beliefs-card > article {
+/* ---------- Beliefs section ---------- */
+.beliefs-section article {
   box-shadow: 0 -12px 40px -12px color-mix(in oklab, var(--brand-dark) 22%, transparent);
 }
-@supports (animation-timeline: view()) {
-  .beliefs-card > article {
-    animation: beliefs-shrink linear both;
-    animation-timeline: view();
-    animation-range: exit -10% exit 90%;
-  }
-}
-@keyframes beliefs-shrink {
-  to {
-    transform: scale(0.92) translateY(-10px);
-    filter: brightness(0.94);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .beliefs-card > article {
-    animation: none;
+  .beliefs-section article {
+    transform: none;
   }
 }
