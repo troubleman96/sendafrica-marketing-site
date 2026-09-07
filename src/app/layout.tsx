@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Providers } from "./providers";
+import { GeistSans, GeistMono } from "geist/font";
 
 export const viewport = {
   width: "device-width",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${GeistSans.className} ${GeistMono.variable}`}>
       <body>
         <Providers>
           <Navbar />
