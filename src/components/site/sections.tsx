@@ -280,35 +280,31 @@ export function BeliefsSection() {
           </p>
         </Reveal>
 
-        <div className="relative mx-auto mt-14 h-[300vh] max-w-2xl">
+        <div className="beliefs-stack mx-auto mt-14 max-w-2xl pb-10">
           {cards.map((c, i) => (
             <div
               key={i}
-              className="absolute inset-x-0 flex h-screen items-center"
-              style={{ top: `${i * 100}vh` }}
+              className="beliefs-card sticky mb-8"
+              style={{ top: `${96 + i * 28}px`, zIndex: i + 1 }}
             >
-              <Reveal variant="up" delay={i * 120} once={false} className="w-full">
-                <article
-                  className={`${c.rotate} w-full rounded-[28px] p-8 shadow-sendafrica-float transition-transform duration-500 hover:rotate-0 hover:scale-[1.02] ${
-                    c.dark
-                      ? "bg-[var(--brand-bright)] text-white"
-                      : "border border-border bg-background text-primary"
-                  }`}
-                >
-                  <div className={c.dark ? "text-white" : "text-[var(--brand-bright)]"}>
-                    {c.icon}
-                  </div>
-                  <h3 className={`mt-10 text-[26px] ${c.dark ? "text-white" : "text-primary"}`}>
-                    {c.title}
-                  </h3>
+              <article
+                className={`${c.rotate} rounded-[28px] p-8 shadow-sendafrica-float transition-transform duration-500 hover:rotate-0 hover:scale-[1.02] ${
+                  c.dark
+                    ? "bg-[var(--brand-bright)] text-white"
+                    : "border border-border bg-background text-primary"
+                }`}
+              >
+                <div className={c.dark ? "text-white" : "text-[var(--brand-bright)]"}>{c.icon}</div>
+                <h3 className={`mt-10 text-[26px] ${c.dark ? "text-white" : "text-primary"}`}>
+                  {c.title}
+                </h3>
 
-                  <p
-                    className={`mt-3 text-[15px] leading-relaxed ${c.dark ? "text-white/90" : "text-muted-foreground"}`}
-                  >
-                    {c.body}
-                  </p>
-                </article>
-              </Reveal>
+                <p
+                  className={`mt-3 text-[15px] leading-relaxed ${c.dark ? "text-white/90" : "text-muted-foreground"}`}
+                >
+                  {c.body}
+                </p>
+              </article>
             </div>
           ))}
         </div>

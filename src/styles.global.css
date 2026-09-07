@@ -228,6 +228,9 @@
   .relative {
     position: relative;
   }
+  .sticky {
+    position: sticky;
+  }
   .inset-0 {
     inset: 0px;
   }
@@ -399,6 +402,9 @@
   .mb-1 {
     margin-bottom: var(--spacing);
   }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
   .-ml-4 {
     margin-left: calc(var(--spacing) * -4);
   }
@@ -503,9 +509,6 @@
   .h-\[300px\] {
     height: 300px;
   }
-  .h-\[300vh\] {
-    height: 300vh;
-  }
   .h-\[360px\] {
     height: 360px;
   }
@@ -523,9 +526,6 @@
   }
   .h-px {
     height: 1px;
-  }
-  .h-screen {
-    height: 100vh;
   }
   .h-svh {
     height: 100svh;
@@ -3173,11 +3173,32 @@ html {
 .nav-shell {
   transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
+.beliefs-card {
+  transform-origin: center top;
+  will-change: transform;
+}
+.beliefs-card > article {
+  box-shadow: 0 -12px 40px -12px var(--brand-dark);
+  @supports (color: color-mix(in lab, red, red)) {
+    box-shadow: 0 -12px 40px -12px color-mix(in oklab, var(--brand-dark) 22%, transparent);
+  }
+}
+@supports (animation-timeline: view()) {
+  .beliefs-card > article {
+    animation: beliefs-shrink linear both;
+    animation-timeline: view();
+    animation-range: exit -10% exit 90%;
+  }
+}
+@keyframes beliefs-shrink {
+  to {
+    transform: scale(0.92) translateY(-10px);
+    filter: brightness(0.94);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .beliefs-section .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+  .beliefs-card > article {
+    animation: none;
   }
 }
 @property --tw-translate-x {
