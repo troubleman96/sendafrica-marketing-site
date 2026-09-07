@@ -104,8 +104,16 @@ export function LogoMarquee() {
         </div>
         <div className="marquee-mask relative flex-1 overflow-hidden py-8">
           <div className="animate-marquee flex w-max items-center gap-24 pr-24">
-            {row.map((src, i) => (
-              <img key={i} src={src} alt="Partner" className="h-7 w-auto shrink-0 opacity-90" />
+            {row.map((logo, i) => (
+              <a
+                key={i}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex shrink-0 items-center opacity-90 transition-opacity hover:opacity-100"
+              >
+                <img src={logo.src} alt={logo.alt} className="h-7 w-auto" />
+              </a>
             ))}
           </div>
         </div>

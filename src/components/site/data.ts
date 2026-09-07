@@ -274,8 +274,8 @@ export const jobs = [
 ];
 
 export const partnerLogos = [
-  "/images/logo-1.svg",
-  "/images/logo-2.svg",
-  "/images/logo-3.svg",
-  "/images/logo-4.svg",
+  { src: "/images/CamelPay.jpeg", href: "https://camelpay.in", alt: "CamelPay" },
+  { src: "/images/ngamia.png", href: "https://ngamia.cc", alt: "Ngamia" },
+  { src: "/images/TMlogo.png", href: "https://tumamaoni.com", alt: "Tumamaoni" },
+  { src: "/images/ziada.jpg", href: "https://ziadapos.com", alt: "Zaida POS" },
 ];
