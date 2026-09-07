@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -50,7 +52,7 @@ function Dropdown({ label, items }: { label: string; items: NavLink[] }) {
           {items.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              href={item.to}
               className="block rounded-xl px-3 py-2 text-sm font-medium text-primary transition-all hover:translate-x-1 hover:bg-muted hover:text-accent"
             >
               {item.label}
@@ -100,7 +102,7 @@ export function Navbar() {
             : "max-w-3xl bg-background/95 px-3 py-2.5 shadow-sendafrica-nav"
         }`}
       >
-        <Link to="/" className="flex shrink-0 items-center gap-2" aria-label="SendAfrica home">
+        <Link href="/" className="flex shrink-0 items-center gap-2" aria-label="SendAfrica home">
           <img
             src="/SendAfrica-logo.png"
             alt="SendAfrica"
@@ -112,7 +114,7 @@ export function Navbar() {
           {topLinks.map((l) => (
             <Link
               key={l.to}
-              to={l.to}
+              href={l.to}
               className="rounded-full px-3 py-2 text-[15px] font-medium text-primary transition-colors hover:text-accent"
             >
               {l.label}
@@ -123,7 +125,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Link
-            to="/contact"
+            href="/contact"
             className="hidden rounded-xl border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex btn-sendafrica"
           >
             Get in Touch
@@ -147,7 +149,7 @@ export function Navbar() {
           {[...topLinks, ...pageLinks].map((l) => (
             <Link
               key={l.to}
-              to={l.to}
+              href={l.to}
               onClick={() => setMobileOpen(false)}
               className="block rounded-xl px-2 py-2 font-medium text-primary"
             >
@@ -155,7 +157,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            href="/contact"
             onClick={() => setMobileOpen(false)}
             className="mt-3 block rounded-xl bg-primary px-4 py-3 text-center font-medium text-primary-foreground"
           >

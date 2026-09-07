@@ -1,5 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 import {
+  BeliefsSection,
   CtaSection,
   FaqSection,
   FeatureGrid,
@@ -7,31 +9,21 @@ import {
   PricingSection,
   ShowcaseCards,
   TestimonialSection,
-  BeliefsSection,
 } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "SendAfrica — Tanzania-first SMS automation API" },
-      {
-        name: "description",
-        content:
-          "Send SMS across African mobile networks with SendAfrica. REST API, JWT and SA- API keys, idempotent sends, exact credit billing, and real-time delivery tracking.",
-      },
-      { property: "og:title", content: "SendAfrica — Tanzania-first SMS automation API" },
-      {
-        property: "og:description",
-        content:
-          "Send SMS across African mobile networks. REST API with JWT and API-key auth, idempotent sends, and 25 TZS per SMS part.",
-      },
-    ],
-  }),
-  component: Index,
-});
+export const metadata: Metadata = {
+  title: "SendAfrica — Tanzania-first SMS automation API",
+  description:
+    "Send SMS across African mobile networks with SendAfrica. REST API, JWT and SA- API keys, idempotent sends, exact credit billing, and real-time delivery tracking.",
+  openGraph: {
+    title: "SendAfrica — Tanzania-first SMS automation API",
+    description:
+      "Send SMS across African mobile networks. REST API with JWT and API-key auth, idempotent sends, and 25 TZS per SMS part.",
+  },
+};
 
-function Index() {
+export default function Index() {
   return (
     <>
       <section className="relative overflow-hidden">
@@ -63,13 +55,13 @@ function Index() {
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
-              to="/developers"
+              href="/developers"
               className="rounded-xl bg-[var(--brand)] px-7 py-3.5 font-semibold text-primary-foreground btn-sendafrica shadow-sendafrica-card hover:opacity-90"
             >
               Read the API docs
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="rounded-xl bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
             >
               Talk to sales

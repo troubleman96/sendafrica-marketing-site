@@ -1,24 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { CtaSection, PageHero } from "@/components/site/sections";
 
-export const Route = createFileRoute("/terms-condition")({
-  head: () => ({
-    meta: [
-      { title: "Terms & Conditions — SendAfrica" },
-      {
-        name: "description",
-        content:
-          "The terms that govern your use of the SendAfrica SMS API, including accounts, billing, acceptable use, and liability.",
-      },
-      { property: "og:title", content: "Terms & Conditions — SendAfrica" },
-      {
-        property: "og:description",
-        content: "Terms governing accounts, billing, acceptable use, and liability on SendAfrica.",
-      },
-    ],
-  }),
-  component: Terms,
-});
+export const metadata: Metadata = {
+  title: "Terms & Conditions — SendAfrica",
+  description:
+    "The terms that govern your use of the SendAfrica SMS API, including accounts, billing, acceptable use, and liability.",
+  openGraph: {
+    title: "Terms & Conditions — SendAfrica",
+    description: "Terms governing accounts, billing, acceptable use, and liability on SendAfrica.",
+  },
+};
 
 const sections = [
   {
@@ -47,7 +39,7 @@ const sections = [
   },
 ];
 
-function Terms() {
+export default function Terms() {
   return (
     <>
       <PageHero

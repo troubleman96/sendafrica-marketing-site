@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import {
   BrainCircuit,
   CheckCircle2,
@@ -425,7 +427,7 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
                   ))}
                 </ul>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className={`mt-8 block rounded-xl px-6 py-3.5 text-center font-medium transition-opacity hover:opacity-90 ${
                     plan.highlighted
                       ? "bg-background text-primary"
@@ -515,13 +517,13 @@ export function CtaSection() {
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
-            to="/developers"
+            href="/developers"
             className="rounded-xl bg-[var(--brand)] px-7 py-3.5 font-semibold text-primary-foreground btn-sendafrica shadow-sendafrica-card hover:opacity-90"
           >
             Read the API docs
           </Link>
           <Link
-            to="/pricing"
+            href="/pricing"
             className="rounded-xl bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
           >
             See Pricing

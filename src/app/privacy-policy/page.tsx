@@ -1,24 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { CtaSection, PageHero } from "@/components/site/sections";
 
-export const Route = createFileRoute("/privacy-policy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — SendAfrica" },
-      {
-        name: "description",
-        content:
-          "How SendAfrica collects, uses, stores and protects your personal information across our website and API.",
-      },
-      { property: "og:title", content: "Privacy Policy — SendAfrica" },
-      {
-        property: "og:description",
-        content: "How SendAfrica collects, uses, stores and protects your personal information.",
-      },
-    ],
-  }),
-  component: PrivacyPolicy,
-});
+export const metadata: Metadata = {
+  title: "Privacy Policy — SendAfrica",
+  description:
+    "How SendAfrica collects, uses, stores and protects your personal information across our website and API.",
+  openGraph: {
+    title: "Privacy Policy — SendAfrica",
+    description: "How SendAfrica collects, uses, stores and protects your personal information.",
+  },
+};
 
 const sections = [
   {
@@ -47,7 +39,7 @@ const sections = [
   },
 ];
 
-function PrivacyPolicy() {
+export default function PrivacyPolicy() {
   return (
     <>
       <PageHero

@@ -1,29 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Plug } from "lucide-react";
+import type { Metadata } from "next";
 import { CtaSection, FaqSection, PageHero } from "@/components/site/sections";
 import { integrations } from "@/components/site/data";
 
-export const Route = createFileRoute("/integration")({
-  head: () => ({
-    meta: [
-      { title: "Integrations — Connect SendAfrica to your stack" },
-      {
-        name: "description",
-        content:
-          "SendAfrica connects to Africa's Talking and SwalaSMS for delivery, Snippe for mobile-money, and Google Contacts for phonebooks — all over a REST API.",
-      },
-      { property: "og:title", content: "Integrations — Connect SendAfrica to your stack" },
-      {
-        property: "og:description",
-        content:
-          "Africa's Talking, SwalaSMS, Snippe, Google Contacts, and no-code tools, all via REST.",
-      },
-    ],
-  }),
-  component: Integration,
-});
+export const metadata: Metadata = {
+  title: "Integrations — Connect SendAfrica to your stack",
+  description:
+    "SendAfrica connects to Africa's Talking and SwalaSMS for delivery, Snippe for mobile-money, and Google Contacts for phonebooks — all over a REST API.",
+  openGraph: {
+    title: "Integrations — Connect SendAfrica to your stack",
+    description:
+      "Africa's Talking, SwalaSMS, Snippe, Google Contacts, and no-code tools, all via REST.",
+  },
+};
 
-function Integration() {
+export default function Integration() {
   return (
     <>
       <PageHero

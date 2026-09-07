@@ -1,25 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import { CtaSection, FaqSection, PageHero } from "@/components/site/sections";
 
-export const Route = createFileRoute("/developers")({
-  head: () => ({
-    meta: [
-      { title: "Developers — SendAfrica SMS API reference" },
-      {
-        name: "description",
-        content:
-          "SendAfrica REST API for Tanzania-first SMS: JWT and SA- API key auth, idempotent sends, exact credit billing, and real-time delivery. Full reference at docs.sendafrica.online.",
-      },
-      { property: "og:title", content: "Developers — SendAfrica SMS API reference" },
-      {
-        property: "og:description",
-        content:
-          "REST API for sending SMS across African mobile networks. JWT and API-key auth, idempotent sends, 25 TZS per part.",
-      },
-    ],
-  }),
-  component: Developers,
-});
+export const metadata: Metadata = {
+  title: "Developers — SendAfrica SMS API reference",
+  description:
+    "SendAfrica REST API for Tanzania-first SMS: JWT and SA- API key auth, idempotent sends, exact credit billing, and real-time delivery. Full reference at docs.sendafrica.online.",
+  openGraph: {
+    title: "Developers — SendAfrica SMS API reference",
+    description:
+      "REST API for sending SMS across African mobile networks. JWT and API-key auth, idempotent sends, 25 TZS per part.",
+  },
+};
 
 const endpointGroups = [
   {
@@ -71,7 +62,7 @@ const endpointGroups = [
   },
 ];
 
-function Developers() {
+export default function Developers() {
   return (
     <>
       <PageHero

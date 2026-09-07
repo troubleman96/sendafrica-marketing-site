@@ -1,27 +1,19 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { CtaSection, PageHero } from "@/components/site/sections";
 import { jobs } from "@/components/site/data";
 
-export const Route = createFileRoute("/career")({
-  head: () => ({
-    meta: [
-      { title: "Careers — Build SendAfrica with us" },
-      {
-        name: "description",
-        content:
-          "Open roles across engineering, product, and developer relations at SendAfrica. Build Tanzania-first SMS infrastructure used by developers across East Africa.",
-      },
-      { property: "og:title", content: "Careers — Build SendAfrica with us" },
-      {
-        property: "og:description",
-        content: "Open roles in engineering, product, and developer relations at SendAfrica.",
-      },
-    ],
-  }),
-  component: Career,
-});
+export const metadata: Metadata = {
+  title: "Careers — Build SendAfrica with us",
+  description:
+    "Open roles across engineering, product, and developer relations at SendAfrica. Build Tanzania-first SMS infrastructure used by developers across East Africa.",
+  openGraph: {
+    title: "Careers — Build SendAfrica with us",
+    description: "Open roles in engineering, product, and developer relations at SendAfrica.",
+  },
+};
 
-function Career() {
+export default function Career() {
   return (
     <>
       <PageHero
@@ -43,7 +35,7 @@ function Career() {
                 <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{job.body}</p>
               </div>
               <Link
-                to="/contact"
+                href="/contact"
                 className="shrink-0 rounded-xl bg-[var(--brand)] px-6 py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90"
               >
                 Apply now

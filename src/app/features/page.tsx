@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import {
   CtaSection,
   FaqSection,
@@ -7,27 +7,18 @@ import {
   ShowcaseCards,
 } from "@/components/site/sections";
 
-export const Route = createFileRoute("/features")({
-  head: () => ({
-    meta: [
-      { title: "Features — SendAfrica SMS automation API" },
-      {
-        name: "description",
-        content:
-          "Tanzania-first SMS automation: developer API with JWT and SA- API keys, bulk campaigns, contact lists, Sender IDs, credits, and mobile-money top-ups.",
-      },
-      { property: "og:title", content: "Features — SendAfrica SMS automation API" },
-      {
-        property: "og:description",
-        content:
-          "Single sends, bulk campaigns, contact lists, Sender IDs, credits, and mobile-money top-ups in one API.",
-      },
-    ],
-  }),
-  component: Features,
-});
+export const metadata: Metadata = {
+  title: "Features — SendAfrica SMS automation API",
+  description:
+    "Tanzania-first SMS automation: developer API with JWT and SA- API keys, bulk campaigns, contact lists, Sender IDs, credits, and mobile-money top-ups.",
+  openGraph: {
+    title: "Features — SendAfrica SMS automation API",
+    description:
+      "Single sends, bulk campaigns, contact lists, Sender IDs, credits, and mobile-money top-ups in one API.",
+  },
+};
 
-function Features() {
+export default function Features() {
   return (
     <>
       <PageHero

@@ -1,27 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import { CtaSection, LogoMarquee, PageHero, TestimonialSection } from "@/components/site/sections";
 import { testimonials } from "@/components/site/data";
 
-export const Route = createFileRoute("/testimonials")({
-  head: () => ({
-    meta: [
-      { title: "Testimonials — What SendAfrica customers say" },
-      {
-        name: "description",
-        content:
-          "Read how teams across Tanzania and East Africa send SMS reliably and track delivery in real time with SendAfrica.",
-      },
-      { property: "og:title", content: "Testimonials — What SendAfrica customers say" },
-      {
-        property: "og:description",
-        content: "Real stories from teams that send and deliver SMS reliably with SendAfrica.",
-      },
-    ],
-  }),
-  component: Testimonials,
-});
+export const metadata: Metadata = {
+  title: "Testimonials — What SendAfrica customers say",
+  description:
+    "Read how teams across Tanzania and East Africa send SMS reliably and track delivery in real time with SendAfrica.",
+  openGraph: {
+    title: "Testimonials — What SendAfrica customers say",
+    description: "Real stories from teams that send and deliver SMS reliably with SendAfrica.",
+  },
+};
 
-function Testimonials() {
+export default function Testimonials() {
   return (
     <>
       <PageHero

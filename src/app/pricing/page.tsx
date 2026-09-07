@@ -1,24 +1,16 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { CtaSection, FaqSection, PageHero, PricingSection } from "@/components/site/sections";
 
-export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "Pricing — SendAfrica pay-as-you-go SMS" },
-      {
-        name: "description",
-        content:
-          "SendAfrica charges 25 TZS per SMS part (SwalaSMS) or 35 TZS via Africa's Talking. Plans set your rate limit; credits are bought in packages from the API.",
-      },
-      { property: "og:title", content: "Pricing — SendAfrica pay-as-you-go SMS" },
-      {
-        property: "og:description",
-        content: "25 TZS per SMS part. Free 60, Pro 600, Enterprise 6,000 requests per minute.",
-      },
-    ],
-  }),
-  component: Pricing,
-});
+export const metadata: Metadata = {
+  title: "Pricing — SendAfrica pay-as-you-go SMS",
+  description:
+    "SendAfrica charges 25 TZS per SMS part (SwalaSMS) or 35 TZS via Africa's Talking. Plans set your rate limit; credits are bought in packages from the API.",
+  openGraph: {
+    title: "Pricing — SendAfrica pay-as-you-go SMS",
+    description: "25 TZS per SMS part. Free 60, Pro 600, Enterprise 6,000 requests per minute.",
+  },
+};
 
 const tiers = [
   {
@@ -48,7 +40,7 @@ const packages = [
   },
 ];
 
-function Pricing() {
+export default function Pricing() {
   return (
     <>
       <PageHero
@@ -126,7 +118,7 @@ function Pricing() {
                 </p>
                 <p className="mt-1 text-[15px] text-muted-foreground">{p.credits} SMS credits</p>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="mt-8 block rounded-xl bg-[var(--brand)] px-6 py-3.5 text-center font-medium text-primary-foreground transition-opacity hover:opacity-90"
                 >
                   Buy credits

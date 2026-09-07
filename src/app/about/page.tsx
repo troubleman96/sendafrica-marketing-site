@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import {
   BeliefsSection,
   CtaSection,
@@ -6,24 +6,15 @@ import {
   TestimonialSection,
 } from "@/components/site/sections";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About SendAfrica — Africa's SMS automation backbone" },
-      {
-        name: "description",
-        content:
-          "SendAfrica is a Tanzania-first SMS automation API built for developers. We handle Africa's Talking and SwalaSMS routing, exact credit billing, and real-time delivery so teams can focus on their message.",
-      },
-      { property: "og:title", content: "About SendAfrica — Africa's SMS automation backbone" },
-      {
-        property: "og:description",
-        content: "SendAfrica is a Tanzania-first SMS automation API for developers and teams.",
-      },
-    ],
-  }),
-  component: About,
-});
+export const metadata: Metadata = {
+  title: "About SendAfrica — Africa's SMS automation backbone",
+  description:
+    "SendAfrica is a Tanzania-first SMS automation API built for developers. We handle Africa's Talking and SwalaSMS routing, exact credit billing, and real-time delivery so teams can focus on their message.",
+  openGraph: {
+    title: "About SendAfrica — Africa's SMS automation backbone",
+    description: "SendAfrica is a Tanzania-first SMS automation API for developers and teams.",
+  },
+};
 
 const metrics = [
   { value: "25 TZS", label: "Per SMS part (SwalaSMS)" },
@@ -39,7 +30,7 @@ const team = [
   { name: "Daniel Kim", role: "Head of Developer Relations", img: "/images/team-4.avif" },
 ];
 
-function About() {
+export default function About() {
   return (
     <>
       <PageHero

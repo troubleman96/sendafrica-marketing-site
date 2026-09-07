@@ -1,19 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 
-export const Route = createFileRoute("/404-not-found")({
-  head: () => ({
-    meta: [
-      { title: "Page not found — SendAfrica" },
-      { name: "description", content: "The page you're looking for doesn't exist or has moved." },
-      { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Page not found — SendAfrica" },
-      { property: "og:description", content: "The page you're looking for doesn't exist." },
-    ],
-  }),
-  component: NotFoundPage,
-});
+export const metadata: Metadata = {
+  title: "Page not found — SendAfrica",
+  description: "The page you're looking for doesn't exist or has been moved.",
+  robots: "noindex",
+  openGraph: {
+    title: "Page not found — SendAfrica",
+    description: "The page you're looking for doesn't exist.",
+  },
+};
 
-function NotFoundPage() {
+export default function NotFoundPage() {
   return (
     <section className="relative overflow-hidden">
       <div
@@ -29,7 +27,7 @@ function NotFoundPage() {
           back on track.
         </p>
         <Link
-          to="/"
+          href="/"
           className="mt-8 rounded-xl bg-[var(--brand)] px-7 py-3.5 font-semibold text-primary-foreground shadow-sendafrica-card"
         >
           Back to home

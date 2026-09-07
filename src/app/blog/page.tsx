@@ -1,26 +1,18 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { CtaSection, PageHero } from "@/components/site/sections";
 import { popularPosts, posts } from "@/components/site/data";
 
-export const Route = createFileRoute("/blog")({
-  head: () => ({
-    meta: [
-      { title: "Blog — SendAfrica developer & SMS insights" },
-      {
-        name: "description",
-        content:
-          "Guides and ideas on API design, SMS billing, Tanzania mobile networks, campaigns, and developer best practices.",
-      },
-      { property: "og:title", content: "Blog — SendAfrica developer & SMS insights" },
-      {
-        property: "og:description",
-        content:
-          "Guides on API design, SMS billing, campaigns, and sending across African mobile networks.",
-      },
-    ],
-  }),
-  component: Blog,
-});
+export const metadata: Metadata = {
+  title: "Blog — SendAfrica developer & SMS insights",
+  description:
+    "Guides and ideas on API design, SMS billing, Tanzania mobile networks, campaigns, and developer best practices.",
+  openGraph: {
+    title: "Blog — SendAfrica developer & SMS insights",
+    description:
+      "Guides on API design, SMS billing, campaigns, and sending across African mobile networks.",
+  },
+};
 
 function Card({ post }: { post: { title: string; excerpt: string; date: string } }) {
   return (
@@ -30,7 +22,7 @@ function Card({ post }: { post: { title: string; excerpt: string; date: string }
         <p className="text-xs uppercase tracking-wide text-muted-foreground">{post.date}</p>
         <h2 className="mt-3 text-[20px] leading-snug text-primary">{post.title}</h2>
         <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{post.excerpt}</p>
-        <Link to="/developers" className="mt-5 text-sm font-medium text-[var(--brand-bright)]">
+        <Link href="/developers" className="mt-5 text-sm font-medium text-[var(--brand-bright)]">
           Read more →
         </Link>
       </div>
@@ -38,7 +30,7 @@ function Card({ post }: { post: { title: string; excerpt: string; date: string }
   );
 }
 
-function Blog() {
+export default function Blog() {
   return (
     <>
       <PageHero

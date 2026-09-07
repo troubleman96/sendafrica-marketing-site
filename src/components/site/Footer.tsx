@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const columns: { title: string; links: { label: string; to: string }[] }[] = [
@@ -27,7 +29,6 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
       { label: "Contact", to: "/contact" },
       { label: "Privacy Policy", to: "/privacy-policy" },
       { label: "Terms of Conditions", to: "/terms-condition" },
-      { label: "404", to: "/404-not-found" },
     ],
   },
 ];
@@ -80,7 +81,7 @@ export function Footer() {
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <Link
-                      to={l.to}
+                      href={l.to}
                       className="text-sm text-white/75 transition-colors hover:text-white"
                     >
                       {l.label}
