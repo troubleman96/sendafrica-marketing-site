@@ -379,14 +379,14 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
             sub="1 credit = 1 SMS part. Plans set your rate limit — Free 60, Pro 600, Enterprise 6,000 requests per minute."
           />
         )}
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-14 flex justify-center">
           {plans.map((plan, i) => (
             <Reveal
               key={plan.name}
               as="article"
               variant="scale"
               delay={i * 120}
-              className={`hover-lift rounded-[28px] p-4 shadow-sendafrica-card ${
+              className={`hover-lift w-full max-w-sm rounded-[28px] p-4 shadow-sendafrica-card ${
                 plan.highlighted ? "bg-[var(--brand)]" : "border border-border bg-[var(--mist)]"
               }`}
             >
