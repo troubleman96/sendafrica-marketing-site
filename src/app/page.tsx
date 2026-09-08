@@ -10,6 +10,7 @@ import {
   ShowcaseCards,
 } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
+import { Typewriter } from "@/components/site/Typewriter";
 
 export const metadata: Metadata = {
   title: "SendAfrica — Tanzania-first SMS automation API",
@@ -43,11 +44,25 @@ export default function Index() {
             as="h1"
             className="mx-auto mt-4 max-w-4xl text-[44px] leading-[1.05] text-primary sm:text-[68px]"
           >
-            Built for <span className="text-[var(--brand-bright)]">messages that matter.</span>
+            Powerful SMS Automation service for{" "}
+            <span className="text-[var(--brand-bright)]">
+              <Typewriter words={["Businesses", "Startups", "Developers"]} />
+            </span>
           </Reveal>
           <Reveal
             variant="blur"
             delay={120}
+            as="p"
+            className="mx-auto mt-6 max-w-2xl text-lg text-primary/75"
+          >
+            Built for messages that matter{" "}
+            <span className="text-[var(--brand-bright)]">
+              <Typewriter words={["for Businesses", "for Startups", "for Developers"]} />
+            </span>
+          </Reveal>
+          <Reveal
+            variant="blur"
+            delay={200}
             as="p"
             className="mx-auto mt-6 max-w-2xl text-base text-primary/75 sm:text-lg"
           >
@@ -55,7 +70,7 @@ export default function Index() {
           </Reveal>
           <Reveal
             variant="blur"
-            delay={200}
+            delay={280}
             as="p"
             className="mx-auto mt-4 max-w-2xl text-[15px] text-muted-foreground"
           >
@@ -64,7 +79,7 @@ export default function Index() {
           </Reveal>
           <Reveal
             variant="up"
-            delay={280}
+            delay={360}
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
@@ -82,7 +97,7 @@ export default function Index() {
               Read Docs
             </a>
           </Reveal>
-          <Reveal variant="scale" delay={360} className="mt-16">
+          <Reveal variant="scale" delay={440} className="mt-16">
             <img
               src="/images/dashboard.png"
               alt="SendAfrica dashboard"
