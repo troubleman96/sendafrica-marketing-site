@@ -62,18 +62,14 @@ export default function Index() {
             delay={200}
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
-            <Link
-              href="/developers"
+            <a
+              href="https://app.sendafrica.online"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-[var(--brand)] px-7 py-3.5 font-semibold text-primary-foreground btn-sendafrica shadow-sendafrica-card hover:opacity-90"
             >
-              Get API Key
-            </Link>
-            <Link
-              href="/login"
-              className="rounded-xl border border-border bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
-            >
               Sign In
-            </Link>
+            </a>
             <a
               href="https://docs.sendafrica.online"
               target="_blank"
