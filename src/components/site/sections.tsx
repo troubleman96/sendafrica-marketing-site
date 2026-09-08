@@ -253,7 +253,7 @@ export function BeliefsSection() {
     {
       icon: <Lock className="h-7 w-7" />,
       title: "Transparency you can audit",
-      body: "The credit ledger is append-only and every action — sends, top-ups, grants — is a single row. Delivery arrives from Africa's Talking and is deduplicated before it is logged.",
+      body: "The credit ledger is append-only and every action — sends, top-ups, grants — is a single row. Delivery arrives from mobile networks and is deduplicated before it is logged.",
       dark: false,
       rotate: "-rotate-1",
     },
@@ -523,7 +523,8 @@ export function CtaSection() {
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base text-primary/75">
           Tanzania-first SMS automation for developers and teams. Get JWT or API-key auth, exact
-          credit billing, and real-time delivery — all backed by Africa's Talking and SwalaSMS.
+          credit billing at just 25Tsh per SMS, and real-time delivery — no subscriptions, no hidden
+          fees.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link

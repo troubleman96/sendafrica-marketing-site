@@ -16,7 +16,7 @@ export const features = [
   },
   {
     title: "Real-time delivery tracking",
-    body: "Every send lands in your message log with live status — sent, delivered, failed, or rejected — updated from Africa's Talking delivery webhooks.",
+    body: "Every send lands in your message log with live status — sent, delivered, failed, or rejected — updated from real-time delivery reports.",
     icon: "tracking",
   },
   {
@@ -31,7 +31,7 @@ export const features = [
   },
   {
     title: "Custom Sender IDs",
-    body: "Register and manage your own branded alphanumeric Sender ID through SwalaSMS. Submit documents, set a purpose, and track approval status live.",
+    body: "Register and manage your own branded alphanumeric Sender ID through our gateway partners. Submit documents, set a purpose, and track approval status live.",
     icon: "sender",
   },
   {
@@ -44,11 +44,11 @@ export const features = [
 export const faqs = [
   {
     q: "How much does it cost to send an SMS?",
-    a: "SendAfrica is pay-as-you-go: 1 credit = 1 SMS part, priced at 25Tsh per part over SwalaSMS. Credits are bought in packages from GET /v1/packages, or as a custom voucher amount from GET /v1/vouchers/rate.",
+    a: "SendAfrica is pay-as-you-go: 1 credit = 1 SMS part, priced at 25Tsh per SMS. Credits are bought in packages from GET /v1/packages, or as a custom voucher amount from GET /v1/vouchers/rate.",
   },
   {
     q: "Do you support Nigeria / Kenya / international numbers?",
-    a: "The platform routes through Africa's Talking and SwalaSMS and is optimized for Tanzania. Phone validation normalizes to E.164 +255 and accepts mobile numbers only — landline prefixes are rejected, and other country codes may be accepted depending on gateway coverage.",
+    a: "The platform routes through trusted African mobile gateways and is optimized for Tanzania. Phone validation normalizes to E.164 +255 and accepts mobile numbers only — landline prefixes are rejected, and other country codes may be accepted depending on gateway coverage.",
   },
   {
     q: "What is an API key and how is it different from logging in?",
@@ -60,7 +60,7 @@ export const faqs = [
   },
   {
     q: "How do I know my messages were delivered?",
-    a: "Africa's Talking pushes delivery reports to POST /v1/sms/callback. We deduplicate every callback in Redis before updating your message log, so statuses stay accurate even on retries.",
+    a: "Delivery reports arrive via signed webhooks and are deduplicated in Redis before updating your message log, so statuses stay accurate even on retries.",
   },
   {
     q: "Can I schedule a message to my whole list?",
@@ -257,7 +257,7 @@ export const heroCards = [
     img: "/images/sendafrica_live_message_logs_alt.png",
     title: "Delivery Logs",
     subtitle: "A dashboard that tells the truth.",
-    alt: "SendAfrica delivery logs showing delivered, sent, and failed message counts from Africa's Talking webhooks",
+    alt: "SendAfrica delivery logs showing delivered, sent, and failed message counts from real-time delivery webhooks",
   },
 ] as const;
 
