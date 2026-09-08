@@ -29,7 +29,7 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
+          style={{ backgroundImage: "url(/images/hero-safari.jpeg)" }}
           aria-hidden
         />
         <div className="relative container-sendafrica pb-0 pt-24 text-center">
