@@ -84,7 +84,7 @@ export default function Index() {
           </Reveal>
           <Reveal variant="scale" delay={360} className="mt-16">
             <img
-              src="/images/dashboard.avif"
+              src="/images/dashboard.png"
               alt="SendAfrica dashboard"
               className="mx-auto w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
             />

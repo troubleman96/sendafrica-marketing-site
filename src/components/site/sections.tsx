@@ -22,7 +22,15 @@ import {
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Reveal } from "./Reveal";
-import { faqs, features, analyticsCards, partnerLogos, plans, testimonials } from "./data";
+import {
+  faqs,
+  features,
+  heroCards,
+  analyticsCards,
+  partnerLogos,
+  plans,
+  testimonials,
+} from "./data";
 
 const iconMap: Record<string, ReactNode> = {
   sms: <MessageSquare className="h-7 w-7" />,
@@ -136,7 +144,28 @@ export function ShowcaseCards() {
           highlight="from send to delivery"
           sub="A RESTful API built for Tanzania, with JWT and API-key auth, idempotent sends, and delivery tracked in real time."
         />
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+          {heroCards.map((card, i) => (
+            <Reveal
+              key={card.title}
+              as="article"
+              variant={i === 0 ? "left" : "right"}
+              delay={i * 100}
+              className="zoom-media hover-lift overflow-hidden rounded-3xl border border-border bg-[var(--mist)] p-2 shadow-sendafrica-card"
+            >
+              <div className="flex h-[360px] items-center justify-center overflow-hidden rounded-2xl bg-background">
+                <img src={card.img} alt={card.alt} className="h-full w-full object-cover" />
+              </div>
+              <div className="px-6 pb-6 pt-6">
+                <h3 className="text-2xl text-primary">{card.title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground">{card.subtitle}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {analyticsCards.map((card, i) => (
             <Reveal
               key={card.title}
@@ -511,7 +540,7 @@ export function CtaSection() {
           </Link>
         </div>
         <img
-          src="/images/dashboard.avif"
+          src="/images/dashboard.png"
           alt="SendAfrica dashboard"
           className="mx-auto mt-14 w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
         />
