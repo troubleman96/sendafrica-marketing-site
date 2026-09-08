@@ -58,17 +58,8 @@ export default function Index() {
             SendAfrica gives your team the infrastructure to send, track and automate communication.
           </Reveal>
           <Reveal
-            variant="blur"
-            delay={200}
-            as="p"
-            className="mx-auto mt-4 max-w-2xl text-[15px] text-muted-foreground"
-          >
-            Get dedicated developer docs and support when you need it. We&apos;re always ready to
-            help.
-          </Reveal>
-          <Reveal
             variant="up"
-            delay={280}
+            delay={200}
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
@@ -86,7 +77,7 @@ export default function Index() {
               Read Docs
             </a>
           </Reveal>
-          <Reveal variant="scale" delay={360} className="mt-16">
+          <Reveal variant="scale" delay={280} className="mt-16">
             <img
               src="/images/dashboard.png"
               alt="SendAfrica dashboard"
