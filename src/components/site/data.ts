@@ -249,3 +249,45 @@ export const partnerLogos = [
   { src: "/images/ziada.jpg", href: "https://ziadapos.com", alt: "ZiadaPOS" },
   { src: "/images/BusaraDigital.jpg", href: "https://busaradigital.com", alt: "Busara Digital" },
 ];
+
+export const heroCards = [
+  {
+    img: "/images/sendafrica_sms_api_playground.png",
+    title: "API Playground",
+    subtitle: "An API built for reliability.",
+    alt: "SendAfrica API Playground — POST /v1/messages endpoint with JSON request body and response envelope",
+  },
+  {
+    img: "/images/sendafrica_live_message_logs_alt.png",
+    title: "Delivery Logs",
+    subtitle: "A dashboard that tells the truth.",
+    alt: "SendAfrica delivery logs showing delivered, sent, and failed message counts from Africa's Talking webhooks",
+  },
+] as const;
+
+export const analyticsCards = [
+  {
+    img: "/images/sendafrica_campaign_analytics.png",
+    title: "Campaign Analytics",
+    stats: ["12,450 messages", "95.5% delivered"],
+    meta: "7 day chart",
+    description: "Campaigns with clarity.",
+    alt: "SendAfrica campaign analytics dashboard with 7-day delivery trend chart",
+  },
+  {
+    img: "/images/sendafrica_webhook_events.png",
+    title: "Webhook Events",
+    stats: ["delivery.delivered", "delivery.sent", "delivery.failed"],
+    meta: "HMAC verified",
+    description: "Events your application can trust.",
+    alt: "SendAfrica webhook events dashboard showing delivery callbacks with HMAC verification",
+  },
+  {
+    img: "/images/sendafrica_credits_usage_alt.png",
+    title: "Credits & Usage",
+    stats: ["1,240 credits", "≈ TZS 43,400"],
+    meta: "usage chart",
+    description: "Simple pricing. Clear usage.",
+    alt: "SendAfrica credits and usage dashboard showing balance and cost visualization",
+  },
+] as const;

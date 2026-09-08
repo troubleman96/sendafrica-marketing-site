@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Reveal } from "./Reveal";
-import { faqs, features, partnerLogos, plans, testimonials } from "./data";
+import { faqs, features, analyticsCards, partnerLogos, plans, testimonials } from "./data";
 
 const iconMap: Record<string, ReactNode> = {
   sms: <MessageSquare className="h-7 w-7" />,
@@ -132,68 +132,35 @@ export function ShowcaseCards() {
     <section className="bg-background py-24">
       <div className="container-sendafrica">
         <SectionHeading
-          lead="Send SMS and"
-          highlight="see results"
+          lead="Track every message"
+          highlight="from send to delivery"
           sub="A RESTful API built for Tanzania, with JWT and API-key auth, idempotent sends, and delivery tracked in real time."
         />
-
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {[
-            { img: "/images/support.avif", title: "An API built for reliability." },
-            { img: "/images/integration-orbit.avif", title: "A dashboard that tells the truth." },
-          ].map((card, i) => (
-            <Reveal
-              key={i}
-              variant={i === 0 ? "left" : "right"}
-              delay={i * 100}
-              className="zoom-media hover-lift overflow-hidden rounded-3xl border border-border bg-[var(--mist)] p-2 shadow-sendafrica-card"
-              as="article"
-            >
-              <div className="flex h-[300px] items-center justify-center overflow-hidden rounded-2xl bg-background">
-                <img src={card.img} alt={card.title} className="h-full w-full object-cover" />
-              </div>
-              <div className="px-6 pb-6 pt-6">
-                <h3 className="text-2xl text-primary">{card.title}</h3>
-                <p className="mt-2 text-[15px] text-muted-foreground">
-                  Get dedicated developer docs and support when you need it. We&apos;re always ready
-                  to help.
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          {[
-            {
-              img: "/images/card-board.svg",
-              title: "Live message logs",
-              body: "Every send is logged with live sent, delivered, and failed status from Africa's Talking webhooks.",
-            },
-            {
-              img: "/images/card-insight.svg",
-              title: "Delivery analytics",
-              body: "Track per-recipient delivery, cost, and progress as your campaigns run — no double-counting.",
-            },
-            {
-              img: "/images/card-points.svg",
-              title: "Grows with your traffic",
-              body: "From one message to millions, the worker polls every 30 seconds and scales through the gateways.",
-            },
-          ].map((card, i) => (
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {analyticsCards.map((card, i) => (
             <Reveal
               key={card.title}
               as="article"
-              variant="scale"
-              delay={i * 110}
+              variant="up"
+              delay={(i % 3) * 110}
               className="zoom-media hover-lift rounded-3xl border border-border bg-[var(--mist)] p-2 shadow-sendafrica-card"
             >
-              <div className="flex h-[230px] items-center justify-center overflow-hidden rounded-2xl bg-background p-4">
-                <img src={card.img} alt={card.title} className="max-h-full w-full object-contain" />
+              <div className="flex h-[300px] items-center justify-center overflow-hidden rounded-2xl bg-background">
+                <img src={card.img} alt={card.alt} className="h-full w-full object-cover" />
               </div>
               <div className="px-5 pb-5 pt-5">
                 <h3 className="text-[22px] text-primary">{card.title}</h3>
-                <p className="mt-2 text-[15px] text-muted-foreground">{card.body}</p>
+                <div className="mt-3 space-y-1">
+                  {card.stats.map((stat) => (
+                    <p key={stat} className="text-[15px] font-semibold text-primary">
+                      {stat}
+                    </p>
+                  ))}
+                </div>
+                <p className="mt-2 text-[15px] text-muted-foreground">{card.meta}</p>
+                <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">
+                  {card.description}
+                </p>
               </div>
             </Reveal>
           ))}
