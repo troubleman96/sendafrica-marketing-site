@@ -44,8 +44,8 @@ export default function Index() {
             as="h1"
             className="mx-auto mt-4 max-w-4xl text-[44px] leading-[1.05] text-primary sm:text-[68px]"
           >
-            Powerful SMS Automation service for{" "}
-            <span className="text-[var(--brand-bright)]">
+            Built for messages that matter for{" "}
+            <span className="block sm:inline text-[var(--brand-bright)]">
               <Typewriter words={["Businesses", "Startups", "Developers"]} />
             </span>
           </Reveal>
@@ -68,6 +68,12 @@ export default function Index() {
             >
               Get API Key
             </Link>
+            <Link
+              href="/login"
+              className="rounded-xl border border-border bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
+            >
+              Sign In
+            </Link>
             <a
               href="https://docs.sendafrica.online"
               target="_blank"
@@ -81,6 +87,7 @@ export default function Index() {
             <img
               src="/images/dashboard.png"
               alt="SendAfrica dashboard"
+              loading="eager"
               className="mx-auto w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
             />
           </Reveal>

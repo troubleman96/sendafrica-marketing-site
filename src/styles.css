@@ -1,7 +1,6 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -110,6 +109,26 @@
   --ring: oklch(0.7411 0.1815 144.5);
 }
 
+.animate-sendafrica-blink {
+  animation: sendafrica-blink 1s step-end infinite;
+}
+
+@keyframes sendafrica-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sendafrica-blink {
+    animation: none;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -142,13 +161,6 @@
   max-width: 1240px;
   margin-inline: auto;
   padding-inline: 1.25rem;
-}
-
-@utility text-gradient-brand {
-  background: var(--gradient-brand);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 @utility shadow-sendafrica-card {

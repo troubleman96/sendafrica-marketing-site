@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { CtaSection, FaqSection, PageHero } from "@/components/site/sections";
 import ContactForm from "./contact-form";
@@ -14,6 +14,12 @@ export const metadata: Metadata = {
 };
 
 const details = [
+  {
+    icon: <Phone className="h-5 w-5" />,
+    label: "WhatsApp / Calls",
+    value: "0692069230",
+    href: "https://wa.me/255692069230",
+  },
   { icon: <Mail className="h-5 w-5" />, label: "Email", value: "support@sendafrica.online" },
   { icon: <Clock className="h-5 w-5" />, label: "Office hours", value: "Mon–Fri, 8:00–17:00 EAT" },
   { icon: <MapPin className="h-5 w-5" />, label: "Based in", value: "Dar es Salaam, Tanzania" },
@@ -35,7 +41,18 @@ export default function Contact() {
               <div key={d.label} className="rounded-3xl border border-border bg-[var(--mist)] p-7">
                 <span className="text-[var(--brand-bright)]">{d.icon}</span>
                 <p className="mt-5 text-sm text-muted-foreground">{d.label}</p>
-                <p className="mt-1 text-[17px] font-medium text-primary">{d.value}</p>
+                {d.href ? (
+                  <a
+                    href={d.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-[17px] font-medium text-primary hover:text-accent"
+                  >
+                    {d.value}
+                  </a>
+                ) : (
+                  <p className="mt-1 text-[17px] font-medium text-primary">{d.value}</p>
+                )}
               </div>
             ))}
           </div>

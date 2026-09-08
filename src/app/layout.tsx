@@ -21,10 +21,11 @@ export const metadata: Metadata = {
     title: "SendAfrica — Tanzania-first SMS automation API",
     description:
       "REST API for sending SMS across African mobile networks. JWT and API-key auth, 25Tsh per SMS part, real-time delivery.",
+    images: ["/SendAfrica-logo.png"],
     type: "website",
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "/SendAfrica-logo.png" },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

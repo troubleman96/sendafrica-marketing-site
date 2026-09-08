@@ -45,7 +45,14 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2">
-              <img src="/SendAfrica-logo.png" alt="SendAfrica" className="h-10 rounded-lg" />
+              <img
+                src="/SendAfrica-logo.png"
+                alt="SendAfrica"
+                loading="lazy"
+                width={40}
+                height={40}
+                className="h-10 rounded-lg"
+              />
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/75">
               Tanzania-first SMS automation infrastructure for developers and teams. Send smarter,

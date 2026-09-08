@@ -9,7 +9,7 @@ import {
 export const metadata: Metadata = {
   title: "About SendAfrica — Africa's SMS automation backbone",
   description:
-    "SendAfrica is a Tanzania-first SMS automation API built for developers. We handle Africa's Talking and SwalaSMS routing, exact credit billing, and real-time delivery so teams can focus on their message.",
+    "SendAfrica is a Tanzania-first SMS automation API built for developers. We handle routing, exact credit billing, and real-time delivery so teams can focus on their message.",
   openGraph: {
     title: "About SendAfrica — Africa's SMS automation backbone",
     description: "SendAfrica is a Tanzania-first SMS automation API for developers and teams.",
@@ -17,17 +17,16 @@ export const metadata: Metadata = {
 };
 
 const metrics = [
-  { value: "25Tsh", label: "Per SMS part (SwalaSMS)" },
-  { value: "35Tsh", label: "Per SMS part (Africa's Talking)" },
+  { value: "25Tsh", label: "Per SMS part" },
   { value: "30s", label: "Campaign worker poll interval" },
   { value: "15 min", label: "JWT access token TTL" },
 ];
 
 const team = [
-  { name: "Asha Njeri", role: "Co-founder & CEO", img: "/images/team-1.avif" },
-  { name: "Juma Mwangi", role: "Head of Engineering", img: "/images/team-2.avif" },
-  { name: "Maria Okafor", role: "Product Lead", img: "/images/team-3.avif" },
-  { name: "Daniel Kim", role: "Head of Developer Relations", img: "/images/team-4.avif" },
+  { name: "Ditrick Mpangile", role: "Co-founder & CEO", img: "/images/team-1.avif" },
+  { name: "Emmanuel Lugenge", role: "Head of Engineering", img: "/images/team-2.avif" },
+  { name: "Mohamed Sinani", role: "Product Lead", img: "/images/team-3.avif" },
+  { name: "Charity", role: "Head of Developer Relations", img: "/images/team-4.avif" },
 ];
 
 export default function About() {
@@ -46,7 +45,7 @@ export default function About() {
             alt="SendAfrica team"
             className="w-full rounded-3xl object-cover shadow-sendafrica-float"
           />
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {metrics.map((m) => (
               <div key={m.label} className="rounded-3xl border border-border bg-[var(--mist)] p-8">
                 <p className="text-[40px] font-semibold text-[var(--brand-bright)]">{m.value}</p>
@@ -75,7 +74,7 @@ export default function About() {
               principle has guided us from the first prototype to the API teams rely on across East
               Africa.&quot;
             </p>
-            <p className="mt-6 font-semibold text-primary">Asha Njeri</p>
+            <p className="mt-6 font-semibold text-primary">Ditrick Mpangile</p>
             <p className="text-sm text-muted-foreground">Co-founder &amp; CEO, SendAfrica</p>
           </div>
         </div>

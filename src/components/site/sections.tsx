@@ -123,6 +123,9 @@ export function LogoMarquee() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
+                  loading="lazy"
+                  width={32}
+                  height={32}
                   className="h-8 w-8 shrink-0 rounded-full object-contain"
                 />
                 <span className="text-sm font-medium text-primary">{logo.alt}</span>
@@ -155,7 +158,12 @@ export function ShowcaseCards() {
               className="zoom-media hover-lift overflow-hidden rounded-3xl border border-border bg-[var(--mist)] p-2 shadow-sendafrica-card"
             >
               <div className="flex h-[360px] items-center justify-center overflow-hidden rounded-2xl bg-background">
-                <img src={card.img} alt={card.alt} className="h-full w-full object-cover" />
+                <img
+                  src={card.img}
+                  alt={card.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="px-6 pb-6 pt-6">
                 <h3 className="text-2xl text-primary">{card.title}</h3>
@@ -175,7 +183,12 @@ export function ShowcaseCards() {
               className="zoom-media hover-lift rounded-3xl border border-border bg-[var(--mist)] p-2 shadow-sendafrica-card"
             >
               <div className="flex h-[300px] items-center justify-center overflow-hidden rounded-2xl bg-background">
-                <img src={card.img} alt={card.alt} className="h-full w-full object-cover" />
+                <img
+                  src={card.img}
+                  alt={card.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="px-5 pb-5 pt-5">
                 <h3 className="text-[22px] text-primary">{card.title}</h3>
@@ -386,18 +399,16 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
               as="article"
               variant="scale"
               delay={i * 120}
-              className={`hover-lift w-full max-w-sm rounded-[28px] p-4 shadow-sendafrica-card ${
-                plan.highlighted ? "bg-[var(--brand)]" : "border border-border bg-[var(--mist)]"
-              }`}
+              className="hover-lift w-full max-w-sm rounded-[28px] p-1 shadow-sendafrica-card"
             >
               <div
-                className={`rounded-3xl px-7 py-8 ${
-                  plan.highlighted ? "bg-[var(--brand-bright)] text-white" : "bg-background"
-                }`}
+                className={`rounded-[26px] p-8 ${plan.highlighted ? "bg-[var(--brand-bright)] text-white" : "border border-border bg-background"}`}
               >
                 <p
                   className={
-                    plan.highlighted ? "text-sm text-white/85" : "text-sm text-muted-foreground"
+                    plan.highlighted
+                      ? "text-sm font-medium text-white/85"
+                      : "text-sm font-medium text-[var(--brand-bright)]"
                   }
                 >
                   {plan.eyebrow}
@@ -407,17 +418,20 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
                 >
                   {plan.name}
                 </h3>
+                <div className="mt-6 flex flex-col items-start">
+                  <span
+                    className={`text-[52px] font-extrabold ${plan.highlighted ? "text-white" : "text-primary"}`}
+                  >
+                    {plan.price}
+                  </span>
+                  <span
+                    className={`text-[17px] ${plan.highlighted ? "text-white/70" : "text-muted-foreground"}`}
+                  >
+                    {plan.unit}
+                  </span>
+                </div>
                 <p
-                  className={`mt-6 text-[40px] font-semibold ${plan.highlighted ? "text-white" : "text-primary"}`}
-                >
-                  {plan.price}
-                  <span className="ml-1 align-middle text-base font-normal">{plan.unit}</span>
-                </p>
-              </div>
-
-              <div className="px-7 pb-4 pt-7">
-                <p
-                  className={`text-[15px] leading-relaxed ${plan.highlighted ? "text-white/85" : "text-muted-foreground"}`}
+                  className={`mt-4 text-[15px] leading-relaxed ${plan.highlighted ? "text-white/85" : "text-muted-foreground"}`}
                 >
                   {plan.note}
                 </p>
@@ -438,7 +452,7 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
                 </ul>
                 <Link
                   href="/contact"
-                  className={`mt-8 block rounded-xl px-6 py-3.5 text-center font-medium transition-opacity hover:opacity-90 ${
+                  className={`btn-sendafrica mt-8 block w-full rounded-xl py-4 text-center font-semibold transition-all duration-200 hover:scale-[1.02] hover:opacity-90 ${
                     plan.highlighted
                       ? "bg-background text-primary"
                       : "bg-[var(--brand)] text-primary-foreground"
@@ -543,6 +557,9 @@ export function CtaSection() {
         <img
           src="/images/dashboard.png"
           alt="SendAfrica dashboard"
+          loading="lazy"
+          width={1200}
+          height={675}
           className="mx-auto mt-14 w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
         />
       </Reveal>

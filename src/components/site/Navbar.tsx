@@ -9,16 +9,17 @@ type NavLink = { label: string; to: string };
 const topLinks: NavLink[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Features", to: "/features" },
+  { label: "Business", to: "/business" },
   { label: "Developers", to: "/developers" },
-  { label: "Pricing", to: "/pricing" },
+  { label: "Contact", to: "/contact" },
 ];
 
 const pageLinks: NavLink[] = [
+  { label: "Features", to: "/features" },
+  { label: "Pricing", to: "/pricing" },
   { label: "Testimonials", to: "/testimonials" },
   { label: "Blog", to: "/blog" },
   { label: "Careers", to: "/career" },
-  { label: "Contact", to: "/contact" },
   { label: "FAQ", to: "/faq" },
   { label: "Privacy Policy", to: "/privacy-policy" },
   { label: "Terms of Conditions", to: "/terms-condition" },
@@ -73,8 +74,9 @@ export function Navbar() {
     let last = window.scrollY;
     const onScroll = () => {
       const y = window.scrollY;
+      const isDesktop = window.innerWidth >= 768;
       setScrolled(y > 24);
-      setHidden(y > 320 && y > last);
+      setHidden(isDesktop && y > 320 && y > last);
       last = y;
     };
     onScroll();
@@ -91,7 +93,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`nav-shell pointer-events-none fixed inset-x-0 top-4 z-50 px-4 ${
+      className={`nav-shell pointer-events-none fixed inset-x-0 top-0 z-50 px-4 ${
         hidden && !mobileOpen ? "-translate-y-[140%]" : "translate-y-0"
       }`}
     >
@@ -106,6 +108,7 @@ export function Navbar() {
           <img
             src="/SendAfrica-logo.png"
             alt="SendAfrica"
+            loading="eager"
             className={`w-auto rounded-lg transition-all duration-300 ${scrolled ? "h-8" : "h-10"}`}
           />
         </Link>
@@ -120,16 +123,18 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Dropdown label="Pages" items={pageLinks} />
+          <Dropdown label="More" items={pageLinks} />
         </div>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="/contact"
+          <a
+            href="https://app.sendafrica.online"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-xl border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex btn-sendafrica"
           >
-            Get in Touch
-          </Link>
+            Sign In
+          </a>
           <button
             type="button"
             aria-label="Toggle menu"
@@ -156,13 +161,15 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
+          <a
+            href="https://app.sendafrica.online"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="mt-3 block rounded-xl bg-primary px-4 py-3 text-center font-medium text-primary-foreground"
           >
-            Get in Touch
-          </Link>
+            Sign In
+          </a>
         </div>
       )}
     </header>

@@ -41,6 +41,7 @@ npm run build
 | `/` | Marketing home |
 | `/about` | Company story, team, API-grounded metrics |
 | `/features` | SMS automation capabilities |
+| `/business` | Business SMS: Sender IDs, reminders, campaigns |
 | `/pricing` | Pay-as-you-go credits + plan rate limits |
 | `/developers` | API reference summary (links to `docs.sendafrica.online`) |
 | `/testimonials` | Customer stories |

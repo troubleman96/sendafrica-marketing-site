@@ -26,20 +26,6 @@ export default function Features() {
         highlight="built for Africa"
         sub="From a single OTP to a million-recipient campaign, SendAfrica gives you the API, dashboard, and delivery tracking you need."
       />
-      <section className="bg-background py-20">
-        <div className="container-sendafrica grid gap-6 lg:grid-cols-2">
-          <img
-            src="/images/features-team.avif"
-            alt="Developer sending SMS"
-            className="h-[360px] w-full rounded-3xl object-cover shadow-sendafrica-card"
-          />
-          <img
-            src="/images/features-office.avif"
-            alt="SendAfrica campaign dashboard"
-            className="h-[360px] w-full rounded-3xl object-cover shadow-sendafrica-card"
-          />
-        </div>
-      </section>
       <FeatureGrid />
       <ShowcaseCards />
       <FaqSection />

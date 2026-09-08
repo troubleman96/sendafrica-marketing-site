@@ -18,8 +18,20 @@ export function Typewriter({
   const [display, setDisplay] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const [prefersReduced, setPrefersReduced] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setPrefersReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (prefersReduced) {
+      setDisplay(words[0] ?? "");
+      return;
+    }
+
     const word = words[wordIndex] ?? "";
     const timeout = setTimeout(
       () => {
@@ -40,12 +52,12 @@ export function Typewriter({
     );
 
     return () => clearTimeout(timeout);
-  }, [display, deleting, wordIndex, words, typeSpeed, deleteSpeed, delay]);
+  }, [display, deleting, wordIndex, words, typeSpeed, deleteSpeed, delay, prefersReduced]);
 
   return (
     <span className={className}>
       {display}
-      <span className="animate-pulse">|</span>
+      <span className="animate-sendafrica-blink">|</span>
     </span>
   );
 }
