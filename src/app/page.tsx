@@ -46,7 +46,7 @@ export default function Index() {
           >
             Built for messages that matter for{" "}
             <span className="block sm:inline text-[var(--brand-bright)]">
-              <Typewriter words={["Businesses", "Startups", "Developers"]} />
+              <Typewriter words={["Black", "SMS-AUTOMATION"]} />
             </span>
           </Reveal>
           <Reveal
