@@ -79,7 +79,7 @@ export function PageHero({
     <section className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
+        style={{ backgroundImage: "url(/images/new-hero.jpg)" }}
         aria-hidden
       />
       <div
@@ -187,7 +187,11 @@ export function ShowcaseCards() {
                   src={card.img}
                   alt={card.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className={
+                    card.title === "Campaign Analytics"
+                      ? "h-full w-full object-contain"
+                      : "h-full w-full object-cover"
+                  }
                 />
               </div>
               <div className="px-5 pb-5 pt-5">
@@ -276,7 +280,7 @@ export function BeliefsSection() {
     <section className="beliefs-section relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/footer-bg.avif)" }}
+        style={{ backgroundImage: "url(/images/middle-bg.jpg)" }}
         aria-hidden
       />
       <div className="relative container-sendafrica py-24">
@@ -528,7 +532,7 @@ export function CtaSection() {
     <section className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
+        style={{ backgroundImage: "url(/images/new-hero.jpg)" }}
         aria-hidden
       />
       <Reveal variant="blur" className="relative container-sendafrica pb-0 pt-24 text-center">

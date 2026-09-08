@@ -40,11 +40,6 @@ export default function About() {
 
       <section className="bg-background py-20">
         <div className="container-sendafrica">
-          <img
-            src="/images/about-office.avif"
-            alt="SendAfrica team"
-            className="w-full rounded-3xl object-cover shadow-sendafrica-float"
-          />
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {metrics.map((m) => (
               <div key={m.label} className="rounded-3xl border border-border bg-[var(--mist)] p-8">

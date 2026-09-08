@@ -35,13 +35,8 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[var(--brand-deep)] text-white">
-      <div
-        className="absolute inset-0 bg-cover bg-bottom opacity-90"
-        style={{ backgroundImage: "url(/footer/footer-safari)" }}
-        aria-hidden
-      />
-      <div className="relative container-sendafrica pb-10 pt-20">
+    <footer className="relative overflow-hidden bg-[#00381E] text-white">
+      <div className="container-sendafrica pb-10 pt-20">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2">

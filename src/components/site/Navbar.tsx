@@ -37,7 +37,7 @@ function Dropdown({ label, items }: { label: string; items: NavLink[] }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-medium text-primary transition-colors hover:text-accent"
+        className="flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-medium text-black transition-colors hover:text-accent"
       >
         {label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -54,7 +54,7 @@ function Dropdown({ label, items }: { label: string; items: NavLink[] }) {
             <Link
               key={item.to}
               href={item.to}
-              className="block rounded-xl px-3 py-2 text-sm font-medium text-primary transition-all hover:translate-x-1 hover:bg-muted hover:text-accent"
+              className="block rounded-xl px-3 py-2 text-sm font-medium text-black transition-all hover:translate-x-1 hover:bg-muted hover:text-accent"
             >
               {item.label}
             </Link>
@@ -111,6 +111,7 @@ export function Navbar() {
             loading="eager"
             className={`w-auto rounded-lg transition-all duration-300 ${scrolled ? "h-8" : "h-10"}`}
           />
+          <span className="md:hidden text-lg font-semibold text-black">SendAfrica</span>
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -118,7 +119,7 @@ export function Navbar() {
             <Link
               key={l.to}
               href={l.to}
-              className="rounded-full px-3 py-2 text-[15px] font-medium text-primary transition-colors hover:text-accent"
+              className="rounded-full px-3 py-2 text-[15px] font-medium text-black transition-colors hover:text-accent"
             >
               {l.label}
             </Link>
@@ -131,7 +132,7 @@ export function Navbar() {
             href="https://app.sendafrica.online"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-xl border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex btn-sendafrica"
+            className="hidden rounded-xl border border-primary px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex btn-sendafrica"
           >
             Sign In
           </a>
@@ -139,7 +140,7 @@ export function Navbar() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setMobileOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border text-primary md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border text-black md:hidden"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -156,7 +157,7 @@ export function Navbar() {
               key={l.to}
               href={l.to}
               onClick={() => setMobileOpen(false)}
-              className="block rounded-xl px-2 py-2 font-medium text-primary"
+              className="block rounded-xl px-2 py-2 font-medium text-black"
             >
               {l.label}
             </Link>

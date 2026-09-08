@@ -16,7 +16,7 @@ export default function NotFoundPage() {
     <section className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
+        style={{ backgroundImage: "url(/images/new-hero.jpg)" }}
         aria-hidden
       />
       <div className="relative container-sendafrica flex min-h-screen flex-col items-center justify-center text-center">
