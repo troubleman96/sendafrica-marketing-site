@@ -38,7 +38,7 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-[var(--brand-deep)] text-white">
       <div
         className="absolute inset-0 bg-cover bg-bottom opacity-90"
-        style={{ backgroundImage: "url(/images/footer-bg.avif)" }}
+        style={{ backgroundImage: "url(/footer/footer-safari)" }}
         aria-hidden
       />
       <div className="relative container-sendafrica pb-10 pt-20">
