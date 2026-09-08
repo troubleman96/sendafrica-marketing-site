@@ -53,24 +53,13 @@ export default function Index() {
             variant="blur"
             delay={120}
             as="p"
-            className="mx-auto mt-6 max-w-2xl text-lg text-primary/75"
-          >
-            Built for messages that matter{" "}
-            <span className="text-[var(--brand-bright)]">
-              <Typewriter words={["for Businesses", "for Startups", "for Developers"]} />
-            </span>
-          </Reveal>
-          <Reveal
-            variant="blur"
-            delay={200}
-            as="p"
             className="mx-auto mt-6 max-w-2xl text-base text-primary/75 sm:text-lg"
           >
             SendAfrica gives your team the infrastructure to send, track and automate communication.
           </Reveal>
           <Reveal
             variant="blur"
-            delay={280}
+            delay={200}
             as="p"
             className="mx-auto mt-4 max-w-2xl text-[15px] text-muted-foreground"
           >
@@ -79,7 +68,7 @@ export default function Index() {
           </Reveal>
           <Reveal
             variant="up"
-            delay={360}
+            delay={280}
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
@@ -97,7 +86,7 @@ export default function Index() {
               Read Docs
             </a>
           </Reveal>
-          <Reveal variant="scale" delay={440} className="mt-16">
+          <Reveal variant="scale" delay={360} className="mt-16">
             <img
               src="/images/dashboard.png"
               alt="SendAfrica dashboard"
