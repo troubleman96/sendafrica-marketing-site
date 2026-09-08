@@ -13,11 +13,11 @@ import { Reveal } from "@/components/site/Reveal";
 import { Typewriter } from "@/components/site/Typewriter";
 
 export const metadata: Metadata = {
-  title: "SendAfrica — Tanzania-first SMS automation API",
+  title: "SendAfrica — SMS-AUTOMATION SMS automation API",
   description:
     "Built for messages that matter. SendAfrica gives your team the infrastructure to send, track and automate communication across Tanzania. REST API with JWT and API-key auth, idempotent sends, and real-time delivery.",
   openGraph: {
-    title: "SendAfrica — Tanzania-first SMS automation API",
+    title: "SendAfrica — SMS-AUTOMATION SMS automation API",
     description:
       "Built for messages that matter. SendAfrica gives your team the infrastructure to send, track and automate communication across Tanzania.",
   },
@@ -32,10 +32,10 @@ export default function Index() {
           style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
           aria-hidden
         />
-        <div className="relative container-sendafrica pb-0 pt-40 text-center">
+        <div className="relative container-sendafrica pb-0 pt-24 text-center">
           <Reveal variant="blur" delay={0} className="mx-auto max-w-5xl">
             <p className="text-sm font-semibold uppercase tracking-wider text-[var(--brand-bright)]">
-              Tanzania-first
+              SMS-AUTOMATION
             </p>
           </Reveal>
           <Reveal

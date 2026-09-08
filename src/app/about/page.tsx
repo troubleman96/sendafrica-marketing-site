@@ -9,10 +9,10 @@ import {
 export const metadata: Metadata = {
   title: "About SendAfrica — Africa's SMS automation backbone",
   description:
-    "SendAfrica is a Tanzania-first SMS automation API built for developers. We handle routing, exact credit billing, and real-time delivery so teams can focus on their message.",
+    "SendAfrica is a SMS-AUTOMATION SMS automation API built for developers. We handle routing, exact credit billing, and real-time delivery so teams can focus on their message.",
   openGraph: {
     title: "About SendAfrica — Africa's SMS automation backbone",
-    description: "SendAfrica is a Tanzania-first SMS automation API for developers and teams.",
+    description: "SendAfrica is a SMS-AUTOMATION SMS automation API for developers and teams.",
   },
 };
 

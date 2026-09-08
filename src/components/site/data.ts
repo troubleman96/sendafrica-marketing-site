@@ -156,7 +156,7 @@ export const posts = [
   },
   {
     slug: "building-tanzania-first-sms-infrastructure",
-    title: "Building Tanzania-first SMS infrastructure",
+    title: "Building SMS-AUTOMATION SMS infrastructure",
     excerpt:
       "Why we validate +255 mobile numbers only and how the 30s worker loop keeps campaigns reliable.",
     date: "September 1, 2025",
@@ -223,7 +223,7 @@ export const jobs = [
   },
   {
     title: "DevRel / Developer Advocate",
-    body: "Write docs and code samples that help developers send their first SMS via our API keys and JWT auth. Tanzania-first, globally minded.",
+    body: "Write docs and code samples that help developers send their first SMS via our API keys and JWT auth. SMS-AUTOMATION, globally minded.",
     date: "September 1, 2025",
   },
   {

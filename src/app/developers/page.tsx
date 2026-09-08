@@ -4,7 +4,7 @@ import { CtaSection, FaqSection, PageHero } from "@/components/site/sections";
 export const metadata: Metadata = {
   title: "Developers — SendAfrica SMS API reference",
   description:
-    "SendAfrica REST API for Tanzania-first SMS: JWT and SA- API key auth, idempotent sends, exact credit billing, and real-time delivery. Full reference at docs.sendafrica.online.",
+    "SendAfrica REST API for SMS-AUTOMATION SMS: JWT and SA- API key auth, idempotent sends, exact credit billing, and real-time delivery. Full reference at docs.sendafrica.online.",
   openGraph: {
     title: "Developers — SendAfrica SMS API reference",
     description:

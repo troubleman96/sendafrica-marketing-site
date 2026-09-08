@@ -86,7 +86,7 @@ export function PageHero({
         className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/10 to-background"
         aria-hidden
       />
-      <Reveal variant="blur" className="relative container-sendafrica pb-24 pt-40 text-center">
+      <Reveal variant="blur" className="relative container-sendafrica pb-24 pt-24 text-center">
         <h1 className="mx-auto max-w-4xl text-[42px] leading-[1.05] text-primary sm:text-[64px]">
           {title} {highlight && <span className="text-[var(--brand-bright)]">{highlight}</span>}
         </h1>
@@ -213,7 +213,7 @@ export function ShowcaseCards() {
 }
 
 export function FeatureGrid({
-  heading = "Tanzania-first",
+  heading = "SMS-AUTOMATION",
   highlight = "SMS automation",
   sub = "REST endpoints, JWT and API-key auth, idempotent sends, and delivery tracked in real time.",
 }: {
@@ -258,7 +258,7 @@ export function BeliefsSection() {
     },
     {
       icon: <Layers className="h-7 w-7" />,
-      title: "Tanzania-first, built right",
+      title: "SMS-AUTOMATION, built right",
       body: "Numbers validate to E.164 +255, mobile prefixes only, and SMS parts count via GSM-7 / UCS-2 so the bill always matches the API response.",
       dark: true,
       rotate: "rotate-2",
@@ -536,7 +536,7 @@ export function CtaSection() {
           Send smarter, <span className="text-[var(--brand-bright)]">deliver better.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base text-primary/75">
-          Tanzania-first SMS automation for developers and teams. Get JWT or API-key auth, exact
+          SMS-AUTOMATION SMS automation for developers and teams. Get JWT or API-key auth, exact
           credit billing at just 25Tsh per SMS, and real-time delivery — no subscriptions, no hidden
           fees.
         </p>

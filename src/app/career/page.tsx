@@ -6,7 +6,7 @@ import { jobs } from "@/components/site/data";
 export const metadata: Metadata = {
   title: "Careers — Build SendAfrica with us",
   description:
-    "Open roles across engineering, product, and developer relations at SendAfrica. Build Tanzania-first SMS infrastructure used by developers across East Africa.",
+    "Open roles across engineering, product, and developer relations at SendAfrica. Build SMS-AUTOMATION SMS infrastructure used by developers across East Africa.",
   openGraph: {
     title: "Careers — Build SendAfrica with us",
     description: "Open roles in engineering, product, and developer relations at SendAfrica.",
