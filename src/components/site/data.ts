@@ -105,12 +105,8 @@ export const plans = [
     name: "Free",
     price: "25Tsh",
     unit: "/ SMS part",
-    note: "1 credit = 1 SMS part. No subscriptions, no hidden fees.",
-    features: [
-      "Africa's Talking + SwalaSMS gateways",
-      "JWT and SA- API key auth",
-      "Real-time delivery tracking",
-    ],
+    note: "No subscriptions, no hidden fees.",
+    features: ["25Tsh per SMS"],
     highlighted: true,
   },
 ];

@@ -8,10 +8,8 @@ import {
   LogoMarquee,
   PricingSection,
   ShowcaseCards,
-  TestimonialSection,
 } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
-import { heroCards } from "@/components/site/data";
 
 export const metadata: Metadata = {
   title: "SendAfrica — Tanzania-first SMS automation API",
@@ -27,8 +25,13 @@ export const metadata: Metadata = {
 export default function Index() {
   return (
     <>
-      <section className="py-24">
-        <div className="container-sendafrica text-center">
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
+          aria-hidden
+        />
+        <div className="relative container-sendafrica pb-0 pt-40 text-center">
           <Reveal variant="blur" delay={0} className="mx-auto max-w-5xl">
             <p className="text-sm font-semibold uppercase tracking-wider text-[var(--brand-bright)]">
               Tanzania-first
@@ -79,24 +82,12 @@ export default function Index() {
               Read Docs
             </a>
           </Reveal>
-          <Reveal variant="up" delay={360} className="mt-16 grid gap-6 lg:grid-cols-2">
-            {heroCards.map((card, i) => (
-              <Reveal
-                key={card.title}
-                as="article"
-                variant={i === 0 ? "left" : "right"}
-                delay={(i + 1) * 60}
-                className="zoom-media hover-lift overflow-hidden rounded-3xl border border-border bg-[var(--mist)] p-2 shadow-sendafrica-card"
-              >
-                <div className="flex h-[360px] items-center justify-center overflow-hidden rounded-2xl bg-background">
-                  <img src={card.img} alt={card.alt} className="h-full w-full object-cover" />
-                </div>
-                <div className="px-6 pb-6 pt-6">
-                  <h3 className="text-2xl text-primary">{card.title}</h3>
-                  <p className="mt-2 text-[15px] text-muted-foreground">{card.subtitle}</p>
-                </div>
-              </Reveal>
-            ))}
+          <Reveal variant="scale" delay={360} className="mt-16">
+            <img
+              src="/images/dashboard.avif"
+              alt="SendAfrica dashboard"
+              className="mx-auto w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
+            />
           </Reveal>
         </div>
       </section>
@@ -105,7 +96,6 @@ export default function Index() {
       <ShowcaseCards />
       <FeatureGrid />
       <BeliefsSection />
-      <TestimonialSection />
       <PricingSection />
       <FaqSection />
       <CtaSection />
