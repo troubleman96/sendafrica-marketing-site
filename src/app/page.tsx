@@ -34,7 +34,7 @@ export default function Index() {
         />
         <div className="relative container-sendafrica pb-0 pt-24 text-center">
           <Reveal variant="blur" delay={0} className="mx-auto max-w-5xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-[var(--brand-bright)]">
+            <p className="text-sm font-semibold uppercase tracking-wider text-black">
               SMS-AUTOMATION
             </p>
           </Reveal>
