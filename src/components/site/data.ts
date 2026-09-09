@@ -248,13 +248,13 @@ export const partnerLogos = [
 
 export const heroCards = [
   {
-    img: "/images/sendafrica_sms_api_playground.png",
+    img: "/images/sendafrica_sms_api_playground.webp",
     title: "API Playground",
     subtitle: "An API built for reliability.",
     alt: "SendAfrica API Playground — POST /v1/messages endpoint with JSON request body and response envelope",
   },
   {
-    img: "/images/update/sendafrica_live_message_logs.png",
+    img: "/images/sendafrica_live_message_logs.webp",
     title: "Delivery Logs",
     subtitle: "A dashboard that tells the truth.",
     alt: "SendAfrica delivery logs showing delivered, sent, and failed message counts from real-time delivery webhooks",
@@ -263,7 +263,7 @@ export const heroCards = [
 
 export const analyticsCards = [
   {
-    img: "/images/update/sendafrica_campaign_analytics.png",
+    img: "/images/sendafrica_campaign_analytics.webp",
     title: "Campaign Analytics",
     stats: ["12,450 messages", "95.5% delivered"],
     meta: "7 day chart",
@@ -271,7 +271,7 @@ export const analyticsCards = [
     alt: "SendAfrica campaign analytics dashboard with 7-day delivery trend chart",
   },
   {
-    img: "/images/update/sendafrica_webhook_events.png",
+    img: "/images/sendafrica_webhook_events.webp",
     title: "Webhook Events",
     stats: ["delivery.delivered", "delivery.sent", "delivery.failed"],
     meta: "HMAC verified",
@@ -279,7 +279,7 @@ export const analyticsCards = [
     alt: "SendAfrica webhook events dashboard showing delivery callbacks with HMAC verification",
   },
   {
-    img: "/images/update/sendafrica_credits_usage_alt.png",
+    img: "/images/sendafrica_credits_usage_alt.webp",
     title: "Credits & Usage",
     stats: ["1,240 credits", "≈ TZS 43,400"],
     meta: "usage chart",

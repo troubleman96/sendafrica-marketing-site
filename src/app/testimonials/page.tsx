@@ -19,7 +19,7 @@ export default function Testimonials() {
         title="Loved by teams"
         highlight="across Africa"
         sub="Developers and businesses send billions of messages through SendAfrica — reliably, and for less."
-        bg="/images/hero-safari.jpg"
+        bg="/images/hero-safari.webp"
       />
       <LogoMarquee />
 

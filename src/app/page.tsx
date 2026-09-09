@@ -26,10 +26,11 @@ export const metadata: Metadata = {
 export default function Index() {
   return (
     <>
+      <link rel="preload" as="image" href="/images/hero-dashbaord.webp" fetchPriority="high" />
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/hero-dashbaord.jpg)" }}
+          style={{ backgroundImage: "url(/images/hero-dashbaord.webp)" }}
           aria-hidden
         />
         <div className="relative container-sendafrica pb-0 pt-24 text-center">
@@ -81,7 +82,7 @@ export default function Index() {
           </Reveal>
           <Reveal variant="scale" delay={280} className="mt-16">
             <img
-              src="/images/dashboard.png"
+              src="/images/dashboard.webp"
               alt="SendAfrica dashboard"
               loading="eager"
               className="mx-auto w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"

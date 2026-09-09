@@ -69,7 +69,7 @@ export function PageHero({
   highlight,
   sub,
   children,
-  bg = "/images/hero-safari.jpg",
+  bg = "/images/hero-safari.webp",
 }: {
   title: string;
   highlight?: string;
@@ -393,7 +393,7 @@ export function BeliefsSection() {
     <section className="beliefs-section relative overflow-clip">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/middle-bg.jpg)" }}
+        style={{ backgroundImage: "url(/images/middle-bg.webp)" }}
         aria-hidden
       />
       <div className="relative container-sendafrica py-24">
@@ -618,7 +618,7 @@ export function CtaSection() {
     <section className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/new-hero.jpg)" }}
+        style={{ backgroundImage: "url(/images/new-hero.webp)" }}
         aria-hidden
       />
       <div
@@ -652,7 +652,7 @@ export function CtaSection() {
           </Link>
         </div>
         <img
-          src="/images/dashboard.png"
+          src="/images/dashboard.webp"
           alt="SendAfrica dashboard"
           loading="lazy"
           width={1200}
