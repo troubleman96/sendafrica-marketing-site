@@ -4,7 +4,7 @@ import { CtaSection, FaqSection, PageHero } from "@/components/site/sections";
 export const metadata: Metadata = {
   title: "Developers — SendAfrica SMS API reference",
   description:
-    "SendAfrica REST API for SMS-AUTOMATION SMS: JWT and SA- API key auth, idempotent sends, exact credit billing, and real-time delivery. Full reference at docs.sendafrica.online.",
+    "SendAfrica REST API for SMS: JWT and SA- API key auth, idempotent sends, exact credit billing, and real-time delivery. Full reference at docs.sendafrica.online.",
   openGraph: {
     title: "Developers — SendAfrica SMS API reference",
     description:
@@ -13,16 +13,6 @@ export const metadata: Metadata = {
 };
 
 const endpointGroups = [
-  {
-    title: "Auth & account",
-    items: [
-      "POST /v1/auth/register — create an account",
-      "POST /v1/auth/login — get a JWT access token",
-      "POST /v1/auth/refresh — rotate your refresh token",
-      "GET /v1/auth/me — your profile and plan",
-      "GET/POST /v1/auth/api-keys — manage SA- API keys",
-    ],
-  },
   {
     title: "SMS",
     items: [
@@ -92,13 +82,13 @@ export default function Developers() {
             Base <span className="text-[var(--brand-bright)]">URL</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-[17px] text-primary/75">
-            <code className="rounded-md bg-[var(--mist)] px-2 py-1">
+            <code className="rounded-md bg-[var(--mist)] px-2 py-1 [overflow-wrap:anywhere]">
               https://api.sendafrica.online
             </code>
             <span className="mx-2 text-muted-foreground">·</span> All routes are prefixed with
             <code className="rounded-md bg-[var(--mist)] px-2 py-1">/v1</code>. Every body is JSON,
             and every response uses a unified envelope:
-            <code className="rounded-md bg-[var(--mist)] px-2 py-1">
+            <code className="rounded-md bg-[var(--mist)] px-2 py-1 [overflow-wrap:anywhere]">
               {"{success, data, error, meta, request_id, timestamp}"}
             </code>
             .
@@ -109,7 +99,7 @@ export default function Developers() {
       <section className="bg-background pb-20">
         <div className="container-sendafrica">
           <div className="grid gap-12 lg:grid-cols-2">
-            <div>
+            <div className="min-w-0">
               <h2 className="text-[34px] leading-tight text-primary sm:text-[42px]">
                 Authentication <span className="text-[var(--brand-bright)]">modes</span>
               </h2>
@@ -136,7 +126,7 @@ curl -X POST https://api.sendafrica.online/v1/sms/send \\
               </div>
             </div>
 
-            <div className="grid gap-10 sm:gap-0 sm:pl-6">
+            <div className="grid min-w-0 gap-10 sm:gap-0 sm:pl-6">
               {endpointGroups.map((g) => (
                 <div key={g.title}>
                   <h3 className="text-xl font-semibold text-primary">{g.title}</h3>

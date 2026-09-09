@@ -156,7 +156,7 @@ export const posts = [
   },
   {
     slug: "building-tanzania-first-sms-infrastructure",
-    title: "Building SMS-AUTOMATION SMS infrastructure",
+    title: "Building SMS infrastructure",
     excerpt:
       "Why we validate +255 mobile numbers only and how the 30s worker loop keeps campaigns reliable.",
     date: "September 1, 2025",
@@ -212,7 +212,7 @@ export const popularPosts = [
 
 export const jobs = [
   {
-    title: "Backend Engineer (Go / SMS)",
+    title: "Backend Engineer",
     body: "Build and harden the SMS automation backend — credit accounting, campaign workers, and Africa's Talking integration. Must care about idempotency, retries, and mobile-money webhooks.",
     date: "September 1, 2025",
   },

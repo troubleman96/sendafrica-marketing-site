@@ -13,11 +13,11 @@ import { Reveal } from "@/components/site/Reveal";
 import { Typewriter } from "@/components/site/Typewriter";
 
 export const metadata: Metadata = {
-  title: "SendAfrica — SMS-AUTOMATION SMS automation API",
+  title: "SendAfrica — SMS automation API",
   description:
     "Built for messages that matter. SendAfrica gives your team the infrastructure to send, track and automate communication across Tanzania. REST API with JWT and API-key auth, idempotent sends, and real-time delivery.",
   openGraph: {
-    title: "SendAfrica — SMS-AUTOMATION SMS automation API",
+    title: "SendAfrica — SMS automation API",
     description:
       "Built for messages that matter. SendAfrica gives your team the infrastructure to send, track and automate communication across Tanzania.",
   },
@@ -29,7 +29,7 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/hero-safari.jpeg)" }}
+          style={{ backgroundImage: "url(/images/hero-dashbaord.jpg)" }}
           aria-hidden
         />
         <div className="relative container-sendafrica pb-0 pt-24 text-center">
@@ -42,9 +42,9 @@ export default function Index() {
             variant="blur"
             delay={40}
             as="h1"
-            className="mx-auto mt-4 max-w-4xl text-[44px] leading-[1.05] text-primary sm:text-[68px]"
+            className="mx-auto mt-4 max-w-4xl text-[44px] font-bold leading-[1.05] text-white sm:text-[68px]"
           >
-            Built for messages that matter for{" "}
+            Built for messages that matter:{" "}
             <span className="block sm:inline text-[var(--brand-bright)]">
               <Typewriter words={["Businesses", "Startups", "Developers"]} />
             </span>
@@ -53,7 +53,7 @@ export default function Index() {
             variant="blur"
             delay={120}
             as="p"
-            className="mx-auto mt-6 max-w-2xl text-base text-primary/75 sm:text-lg"
+            className="mx-auto mt-6 max-w-2xl text-base text-white sm:text-lg"
           >
             SendAfrica gives your team the infrastructure to send, track and automate communication.
           </Reveal>

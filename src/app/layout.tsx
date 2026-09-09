@@ -13,12 +13,12 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SendAfrica — SMS-AUTOMATION SMS automation API",
+  title: "SendAfrica — SMS automation API",
   description:
     "Send SMS across African mobile networks with SendAfrica's REST API. JWT and SA- API keys, idempotent sends, exact credit billing, and real-time delivery tracking.",
   authors: [{ name: "SendAfrica" }],
   openGraph: {
-    title: "SendAfrica — SMS-AUTOMATION SMS automation API",
+    title: "SendAfrica — SMS automation API",
     description:
       "REST API for sending SMS across African mobile networks. JWT and API-key auth, 25Tsh per SMS part, real-time delivery.",
     images: ["/SendAfrica-logo.png"],

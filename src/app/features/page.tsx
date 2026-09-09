@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   title: "Features — SendAfrica SMS automation API",
   description:
-    "SMS-AUTOMATION SMS automation: developer API with JWT and SA- API keys, bulk campaigns, contact lists, Sender IDs, credits, and mobile-money top-ups.",
+    "SMS automation: developer API with JWT and SA- API keys, bulk campaigns, contact lists, Sender IDs, credits, and mobile-money top-ups.",
   openGraph: {
     title: "Features — SendAfrica SMS automation API",
     description:

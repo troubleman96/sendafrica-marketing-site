@@ -49,8 +49,18 @@
 
 :root {
   --radius: 0.75rem;
-    --font-geist: var(--font-geist-sans, "Geist", ui-sans-serif, system-ui, sans-serif);
-  --font-mono: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  --font-geist: var(--font-geist-sans, "Geist", ui-sans-serif, system-ui, sans-serif);
+  --font-mono: var(
+    --font-geist-mono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace
+  );
 
   /* brand */
   --brand: oklch(0.376 0.0928 158.2); /* #005427 */
@@ -136,6 +146,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
@@ -143,6 +154,17 @@
     color: var(--color-foreground);
     font-family: var(--font-geist);
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  /* Legacy fallback: older engines lack overflow: clip. Kept in a @supports
+     guard so position: sticky (beliefs stack) is never demoted on modern
+     browsers, where clip does not create a scroll container. */
+  @supports not (overflow: clip) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
   }
 
   h1,
@@ -328,28 +350,14 @@ html {
 }
 
 /* ---------- Beliefs sticky stack ---------- */
-.beliefs-card {
-  transform-origin: center top;
-  will-change: transform;
-}
 .beliefs-card > article {
-  box-shadow: 0 -12px 40px -12px color-mix(in oklab, var(--brand-dark) 22%, transparent);
+  min-height: 246px;
+  box-shadow:
+    0 28px 60px -30px color-mix(in oklab, var(--brand) 45%, transparent),
+    0 -18px 44px -22px color-mix(in oklab, var(--brand-bright) 30%, transparent);
 }
-@supports (animation-timeline: view()) {
+@media (max-width: 640px) {
   .beliefs-card > article {
-    animation: beliefs-shrink linear both;
-    animation-timeline: view();
-    animation-range: exit -10% exit 90%;
-  }
-}
-@keyframes beliefs-shrink {
-  to {
-    transform: scale(0.92) translateY(-10px);
-    filter: brightness(0.94);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .beliefs-card > article {
-    animation: none;
+    min-height: 330px;
   }
 }

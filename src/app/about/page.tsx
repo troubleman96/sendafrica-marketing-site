@@ -9,10 +9,10 @@ import {
 export const metadata: Metadata = {
   title: "About SendAfrica — Africa's SMS automation backbone",
   description:
-    "SendAfrica is a SMS-AUTOMATION SMS automation API built for developers. We handle routing, exact credit billing, and real-time delivery so teams can focus on their message.",
+    "SendAfrica is a SMS automation API built for developers. We handle routing, exact credit billing, and real-time delivery so teams can focus on their message.",
   openGraph: {
     title: "About SendAfrica — Africa's SMS automation backbone",
-    description: "SendAfrica is a SMS-AUTOMATION SMS automation API for developers and teams.",
+    description: "SendAfrica is a SMS automation API for developers and teams.",
   },
 };
 
@@ -40,6 +40,17 @@ export default function About() {
 
       <section className="bg-background py-20">
         <div className="container-sendafrica">
+          <video
+            src="/SendAfrica.mp4"
+            autoPlay
+            muted
+            loop
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full rounded-3xl object-cover"
+            aria-label="SendAfrica branding video"
+          />
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {metrics.map((m) => (
               <div key={m.label} className="rounded-3xl border border-border bg-[var(--mist)] p-8">
@@ -47,30 +58,6 @@ export default function About() {
                 <p className="mt-2 text-[15px] text-muted-foreground">{m.label}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-background pb-24">
-        <div className="container-sendafrica grid items-center gap-12 lg:grid-cols-2">
-          <img
-            src="/images/ceo.avif"
-            alt="SendAfrica CEO"
-            className="w-full rounded-3xl object-cover"
-          />
-          <div>
-            <h2 className="text-[34px] leading-tight text-primary sm:text-[42px]">
-              A word from <span className="text-[var(--brand-bright)]">the founding team</span>
-            </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-              &quot;We built SendAfrica because every other SMS platform priced African traffic like
-              it was a luxury. Every feature we ship has to earn its place by making a
-              developer&apos;s day simpler — from a single OTP to a million-recipient campaign. That
-              principle has guided us from the first prototype to the API teams rely on across East
-              Africa.&quot;
-            </p>
-            <p className="mt-6 font-semibold text-primary">Ditrick Mpangile</p>
-            <p className="text-sm text-muted-foreground">Co-founder &amp; CEO, SendAfrica</p>
           </div>
         </div>
       </section>

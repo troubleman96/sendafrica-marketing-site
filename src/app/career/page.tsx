@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { CtaSection, PageHero } from "@/components/site/sections";
 import { jobs } from "@/components/site/data";
@@ -6,7 +5,7 @@ import { jobs } from "@/components/site/data";
 export const metadata: Metadata = {
   title: "Careers — Build SendAfrica with us",
   description:
-    "Open roles across engineering, product, and developer relations at SendAfrica. Build SMS-AUTOMATION SMS infrastructure used by developers across East Africa.",
+    "Open roles across engineering, product, and developer relations at SendAfrica. Build SMS infrastructure used by developers across East Africa.",
   openGraph: {
     title: "Careers — Build SendAfrica with us",
     description: "Open roles in engineering, product, and developer relations at SendAfrica.",
@@ -34,12 +33,15 @@ export default function Career() {
                 <h2 className="mt-2 text-[24px] text-primary">{job.title}</h2>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{job.body}</p>
               </div>
-              <Link
-                href="/contact"
-                className="shrink-0 rounded-xl bg-[var(--brand)] px-6 py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              <button
+                type="button"
+                disabled
+                aria-disabled="true"
+                title="Applications opening soon"
+                className="shrink-0 cursor-not-allowed rounded-xl bg-[var(--brand)] px-6 py-3 font-medium text-primary-foreground opacity-50"
               >
                 Apply now
-              </Link>
+              </button>
             </article>
           ))}
         </div>

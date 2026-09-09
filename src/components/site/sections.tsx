@@ -20,7 +20,7 @@ import {
   Wallet,
   Zap,
 } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Reveal } from "./Reveal";
 import {
   faqs,
@@ -69,30 +69,34 @@ export function PageHero({
   highlight,
   sub,
   children,
+  bg = "/images/hero-safari.jpg",
 }: {
   title: string;
   highlight?: string;
   sub?: string;
   children?: ReactNode;
+  bg?: string;
 }) {
   return (
     <section className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/new-hero.jpg)" }}
+        style={{ backgroundImage: `url(${bg})` }}
         aria-hidden
       />
       <div
         className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/10 to-background"
         aria-hidden
       />
+      <div
+        className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/55 via-black/20 to-transparent"
+        aria-hidden
+      />
       <Reveal variant="blur" className="relative container-sendafrica pb-24 pt-24 text-center">
-        <h1 className="mx-auto max-w-4xl text-[42px] leading-[1.05] text-primary sm:text-[64px]">
-          {title} {highlight && <span className="text-[var(--brand-bright)]">{highlight}</span>}
+        <h1 className="mx-auto max-w-4xl text-[42px] font-bold leading-[1.05] text-white sm:text-[64px]">
+          {title} {highlight && <span className="text-white">{highlight}</span>}
         </h1>
-        {sub && (
-          <p className="mx-auto mt-6 max-w-2xl text-base text-primary/75 sm:text-lg">{sub}</p>
-        )}
+        {sub && <p className="mx-auto mt-6 max-w-2xl text-base text-black sm:text-lg">{sub}</p>}
         {children}
       </Reveal>
     </section>
@@ -162,7 +166,7 @@ export function ShowcaseCards() {
                   src={card.img}
                   alt={card.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                 />
               </div>
               <div className="px-6 pb-6 pt-6">
@@ -187,11 +191,7 @@ export function ShowcaseCards() {
                   src={card.img}
                   alt={card.alt}
                   loading="lazy"
-                  className={
-                    card.title === "Campaign Analytics"
-                      ? "h-full w-full object-contain"
-                      : "h-full w-full object-cover"
-                  }
+                  className="h-full w-full object-contain"
                 />
               </div>
               <div className="px-5 pb-5 pt-5">
@@ -217,7 +217,7 @@ export function ShowcaseCards() {
 }
 
 export function FeatureGrid({
-  heading = "SMS-AUTOMATION",
+  heading = "",
   highlight = "SMS automation",
   sub = "REST endpoints, JWT and API-key auth, idempotent sends, and delivery tracked in real time.",
 }: {
@@ -251,8 +251,121 @@ export function FeatureGrid({
   );
 }
 
+type BeliefCard = {
+  icon: ReactNode;
+  title: string;
+  body: string;
+  dark: boolean;
+  rotate: string;
+};
+
+function BeliefStack({ cards }: { cards: BeliefCard[] }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const stack = ref.current;
+    if (!stack) return;
+
+    const reduced =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let els: HTMLElement[] = [];
+
+    const measure = () => {
+      els = Array.from(stack.querySelectorAll<HTMLElement>(".beliefs-card"));
+      for (const el of els) {
+        const article = el.querySelector<HTMLElement>("article");
+        if (!article) continue;
+        const pin = parseFloat(getComputedStyle(el).top);
+        const h = article.getBoundingClientRect().height;
+        if (Number.isNaN(pin) || !h) continue;
+        const top = article.getBoundingClientRect().top + window.scrollY;
+        const to = Math.max(0, top - pin);
+        const from = Math.max(0, to - h);
+        el.style.setProperty("--land-from", `${from}px`);
+        el.style.setProperty("--land-to", `${to}px`);
+      }
+    };
+
+    const apply = () => {
+      if (reduced) return;
+      const y = window.scrollY;
+      for (const el of els) {
+        const from = parseFloat(el.style.getPropertyValue("--land-from"));
+        const to = parseFloat(el.style.getPropertyValue("--land-to"));
+        if (Number.isNaN(from) || Number.isNaN(to) || to <= from) continue;
+        const p = Math.min(1, Math.max(0, (y - from) / (to - from)));
+        el.style.opacity = p.toFixed(4);
+      }
+    };
+
+    const update = () => {
+      measure();
+      apply();
+    };
+
+    update();
+    const raf = requestAnimationFrame(update);
+    let resizeTimer: number | undefined;
+    const onResize = () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(update, 150);
+    };
+    let scrollId = 0;
+    const onScroll = () => {
+      window.cancelAnimationFrame(scrollId);
+      scrollId = requestAnimationFrame(apply);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("load", onResize);
+    window.addEventListener("resize", onResize);
+    document.fonts?.ready.then(update).catch(() => {});
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.cancelAnimationFrame(scrollId);
+      window.clearTimeout(resizeTimer);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("load", onResize);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  return (
+    <div className="beliefs-stack mx-auto mt-14 max-w-2xl pb-40" ref={ref}>
+      {cards.map((c, i) => (
+        <div
+          key={i}
+          className="beliefs-card sticky mb-32"
+          style={{ top: "clamp(72px, 9vh, 104px)", zIndex: i + 1 } as CSSProperties}
+        >
+          <article
+            className={`${c.rotate} rounded-[28px] p-8 shadow-sendafrica-float transition-transform duration-500 hover:rotate-0 hover:scale-[1.02] ${
+              c.dark
+                ? "bg-[var(--brand-bright)] text-white"
+                : "border border-border bg-background text-primary"
+            }`}
+          >
+            <div className={c.dark ? "text-white" : "text-[var(--brand-bright)]"}>{c.icon}</div>
+            <h3 className={`mt-10 text-[26px] ${c.dark ? "text-white" : "text-primary"}`}>
+              {c.title}
+            </h3>
+
+            <p
+              className={`mt-3 text-[15px] leading-relaxed ${c.dark ? "text-white/90" : "text-muted-foreground"}`}
+            >
+              {c.body}
+            </p>
+          </article>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function BeliefsSection() {
-  const cards = [
+  const cards: BeliefCard[] = [
     {
       icon: <RefreshCw className="h-7 w-7" />,
       title: "Reliability, by design",
@@ -277,7 +390,7 @@ export function BeliefsSection() {
   ];
 
   return (
-    <section className="beliefs-section relative overflow-hidden">
+    <section className="beliefs-section relative overflow-clip">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url(/images/middle-bg.jpg)" }}
@@ -293,34 +406,7 @@ export function BeliefsSection() {
           </p>
         </Reveal>
 
-        <div className="beliefs-stack mx-auto mt-14 max-w-2xl pb-10">
-          {cards.map((c, i) => (
-            <div
-              key={i}
-              className="beliefs-card sticky mb-8"
-              style={{ top: `${96 + i * 28}px`, zIndex: i + 1 }}
-            >
-              <article
-                className={`${c.rotate} rounded-[28px] p-8 shadow-sendafrica-float transition-transform duration-500 hover:rotate-0 hover:scale-[1.02] ${
-                  c.dark
-                    ? "bg-[var(--brand-bright)] text-white"
-                    : "border border-border bg-background text-primary"
-                }`}
-              >
-                <div className={c.dark ? "text-white" : "text-[var(--brand-bright)]"}>{c.icon}</div>
-                <h3 className={`mt-10 text-[26px] ${c.dark ? "text-white" : "text-primary"}`}>
-                  {c.title}
-                </h3>
-
-                <p
-                  className={`mt-3 text-[15px] leading-relaxed ${c.dark ? "text-white/90" : "text-muted-foreground"}`}
-                >
-                  {c.body}
-                </p>
-              </article>
-            </div>
-          ))}
-        </div>
+        <BeliefStack cards={cards} />
       </div>
     </section>
   );
@@ -535,14 +621,21 @@ export function CtaSection() {
         style={{ backgroundImage: "url(/images/new-hero.jpg)" }}
         aria-hidden
       />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/10 to-background"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/55 via-black/20 to-transparent"
+        aria-hidden
+      />
       <Reveal variant="blur" className="relative container-sendafrica pb-0 pt-24 text-center">
-        <h2 className="mx-auto max-w-3xl text-[40px] leading-[1.06] text-primary sm:text-[56px]">
-          Send smarter, <span className="text-[var(--brand-bright)]">deliver better.</span>
+        <h2 className="mx-auto max-w-3xl text-[40px] font-bold leading-[1.06] text-white sm:text-[56px]">
+          Send smarter, <span className="text-white">deliver better.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-base text-primary/75">
-          SMS-AUTOMATION SMS automation for developers and teams. Get JWT or API-key auth, exact
-          credit billing at just 25Tsh per SMS, and real-time delivery — no subscriptions, no hidden
-          fees.
+        <p className="mx-auto mt-6 max-w-2xl text-base text-black">
+          SMS automation for developers and teams. Get JWT or API-key auth, exact credit billing at
+          just 25Tsh per SMS, and real-time delivery — no subscriptions, no hidden fees.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link

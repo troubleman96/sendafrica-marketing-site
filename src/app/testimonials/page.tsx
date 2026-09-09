@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaSection, LogoMarquee, PageHero, TestimonialSection } from "@/components/site/sections";
+import { CtaSection, LogoMarquee, PageHero } from "@/components/site/sections";
 import { testimonials } from "@/components/site/data";
 
 export const metadata: Metadata = {
@@ -19,12 +19,13 @@ export default function Testimonials() {
         title="Loved by teams"
         highlight="across Africa"
         sub="Developers and businesses send billions of messages through SendAfrica — reliably, and for less."
+        bg="/images/hero-safari.jpg"
       />
       <LogoMarquee />
 
       <section className="bg-background py-20">
         <div className="container-sendafrica grid gap-6 md:grid-cols-2">
-          {[...testimonials, ...testimonials].map((t, i) => (
+          {testimonials.map((t, i) => (
             <article key={i} className="rounded-3xl border border-border bg-[var(--mist)] p-8">
               <p className="text-[19px] leading-snug text-primary">{t.quote}</p>
               <div className="mt-8 flex items-center gap-4">
@@ -39,7 +40,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      <TestimonialSection />
       <CtaSection />
     </>
   );

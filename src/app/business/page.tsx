@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Business SMS — SendAfrica",
     description:
-      "Branded Sender IDs, appointment reminders, payment alerts, and campaigns on a SMS-AUTOMATION SMS API with real-time delivery tracking.",
+      "Branded Sender IDs, appointment reminders, payment alerts, and campaigns on a SMS API with real-time delivery tracking.",
   },
 };
 

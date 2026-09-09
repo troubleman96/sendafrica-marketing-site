@@ -50,9 +50,8 @@ export function Footer() {
               />
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/75">
-              SMS-AUTOMATION SMS automation infrastructure for developers and teams. Send smarter,
-              track delivery in real time, and scale from one message to millions across African
-              mobile networks.
+              SMS automation infrastructure for developers and teams. Send smarter, track delivery
+              in real time, and scale from one message to millions across African mobile networks.
             </p>
             <a
               href="mailto:support@sendafrica.online"
@@ -97,7 +96,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/60 sm:flex-row">
           <p>© {new Date().getFullYear()} SendAfrica. All rights reserved.</p>
-          <p>SMS-AUTOMATION SMS automation for developers.</p>
+          <p>SMS automation for developers.</p>
         </div>
       </div>
     </footer>
