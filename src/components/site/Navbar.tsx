@@ -129,7 +129,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://app.sendafrica.online"
+            href="https://app.sendafrica.online/login"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-xl border border-primary px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex btn-sendafrica"
@@ -163,7 +163,7 @@ export function Navbar() {
             </Link>
           ))}
           <a
-            href="https://app.sendafrica.online"
+            href="https://app.sendafrica.online/login"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
