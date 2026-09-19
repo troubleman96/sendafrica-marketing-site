@@ -68,10 +68,10 @@ export default function Developers() {
             Read the full docs
           </a>
           <a
-            href="https://api.sendafrica.online/health"
+            href="https://developers.sendafrica.online/login"
             className="rounded-xl bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
           >
-            Visit the API
+            Dashboard
           </a>
         </div>
       </PageHero>
