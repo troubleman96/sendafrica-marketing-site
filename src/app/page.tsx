@@ -45,7 +45,10 @@ export default function Index() {
             as="h1"
             className="mx-auto mt-4 max-w-4xl text-[44px] font-bold leading-[1.05] text-white sm:text-[68px]"
           >
-            Built for messages that matter:{" "}
+            <span className="block sm:inline">
+              <span className="block sm:inline">Built for messages</span>{" "}
+              <span className="block sm:inline">that matter:</span>{" "}
+            </span>
             <span className="block sm:inline text-[var(--brand-bright)]">
               <Typewriter words={["Businesses", "Startups", "Developers"]} />
             </span>
@@ -72,12 +75,12 @@ export default function Index() {
               Sign In
             </a>
             <a
-              href="https://docs.sendafrica.online"
+              href="https://developers.sendafrica.online"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
             >
-              Read Docs
+              Developers
             </a>
           </Reveal>
           <Reveal variant="scale" delay={280} className="mt-16">
