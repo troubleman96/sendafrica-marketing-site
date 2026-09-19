@@ -79,7 +79,7 @@ export default function Index() {
               Sign In
             </a>
             <a
-              href="https://developers.sendafrica.online"
+              href="https://developers.sendafrica.online/login"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
