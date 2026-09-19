@@ -71,7 +71,7 @@ export default function Index() {
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             <a
-              href="https://app.sendafrica.online/login"
+              href="https://app.sendafrica.online/auth/sign-in?next=%2Fdashboard"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-[var(--brand)] px-7 py-3.5 font-semibold text-primary-foreground btn-sendafrica shadow-sendafrica-card hover:opacity-90"
