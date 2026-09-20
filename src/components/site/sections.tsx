@@ -150,12 +150,15 @@ export function ShowcaseCards() {
     <section className="bg-background py-24">
       <div className="container-sendafrica">
         <SectionHeading
-          lead="Track every message"
-          highlight="from send to delivery"
-          sub="A RESTful API built for Tanzania, with JWT and API-key auth, idempotent sends, and delivery tracked in real time."
+          lead="See your SMS"
+          highlight="from request to delivery report"
+          sub="Connect through the REST API or dashboard, retry safely with idempotency keys, and follow asynchronous delivery updates in your message log. A successful send response means the provider accepted the message; final delivery status arrives separately."
         />
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Product screens below use illustrative data.
+        </p>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {heroCards.map((card, i) => (
             <Reveal
               key={card.title}
@@ -213,6 +216,27 @@ export function ShowcaseCards() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-8">
+          <a
+            href="https://developers.sendafrica.online"
+            className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[var(--brand)] px-6 py-3 font-semibold text-primary-foreground btn-sendafrica hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand)]"
+          >
+            Explore developer docs
+          </a>
+          <Link
+            href="/pricing"
+            className="inline-flex min-h-12 items-center justify-center rounded-xl border border-border bg-background px-6 py-3 font-semibold text-primary btn-sendafrica hover:bg-[var(--mist)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand)]"
+          >
+            Understand pricing
+          </Link>
+          <a
+            href="https://app.sendafrica.online/auth/sign-up"
+            className="inline-flex min-h-12 items-center justify-center rounded-xl px-5 py-3 font-semibold text-[var(--brand-bright)] underline underline-offset-4 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand)]"
+          >
+            Create an account
+          </a>
         </div>
       </div>
     </section>
