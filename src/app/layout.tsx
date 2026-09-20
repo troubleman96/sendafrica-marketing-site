@@ -2,10 +2,10 @@ import "@/styles.global.css";
 
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Navbar } from "@/components/site/Navbar";
-import { Footer } from "@/components/site/Footer";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { Providers } from "./providers";
-import { GeistSans, GeistMono } from "geist/font";
+import { SiteLayout } from "@/components/layout/SiteLayout";
 
 export const viewport = {
   width: "device-width",
@@ -33,9 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         <Providers>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <SiteLayout>{children}</SiteLayout>
         </Providers>
       </body>
     </html>
