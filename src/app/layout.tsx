@@ -2,10 +2,13 @@ import "@/styles.global.css";
 
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Outfit } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
+
 import { Providers } from "./providers";
 import { SiteLayout } from "@/components/layout/SiteLayout";
+
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const viewport = {
   width: "device-width",
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${GeistMono.variable}`}>
       <body>
         <Providers>
           <SiteLayout>{children}</SiteLayout>
