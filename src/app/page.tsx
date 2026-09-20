@@ -84,9 +84,11 @@ export default function Index() {
           </Reveal>
           <Reveal variant="scale" delay={280} className="mt-16">
             <img
-              src="/images/dashboard.webp"
-              alt="SendAfrica dashboard"
+              src="/images/dashboard-latest.webp"
+              alt="SendAfrica messaging dashboard"
               loading="eager"
+              width={2000}
+              height={1000}
               className="mx-auto w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
             />
           </Reveal>
