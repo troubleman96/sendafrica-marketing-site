@@ -44,7 +44,7 @@ export const features = [
 export const faqs = [
   {
     q: "How much does it cost to send an SMS?",
-    a: "SendAfrica is pay-as-you-go: one credit is charged per SMS part. A message can use multiple parts depending on its length and character set. The TZS value per credit depends on the available package or voucher option; review the current rate in your account before topping up.",
+    a: "SMS is billed at 25 TZS per SMS part. Message length and character set determine how many parts are used, so longer messages can cost more than one part. Top up through the available packages or vouchers in your account.",
   },
   {
     q: "Do you support Nigeria / Kenya / international numbers?",
@@ -103,13 +103,13 @@ export const plans = [
   {
     eyebrow: "Pay-as-you-go",
     name: "Pay as you go",
-    price: "1 credit",
+    price: "25 TZS",
     unit: "/ SMS part",
-    note: "The TZS amount per credit is shown with the available package or voucher options in your account.",
+    note: "No monthly subscription. Pay for the SMS parts your messages use.",
     features: [
-      "One credit per SMS part",
-      "Long and Unicode messages may use multiple parts",
-      "Check current TZS rates before topping up",
+      "25 TZS per SMS part",
+      "Long messages may use multiple parts",
+      "Track part usage in your account",
     ],
     highlighted: true,
   },

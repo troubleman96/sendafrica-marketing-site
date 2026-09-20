@@ -6,7 +6,7 @@ import { CtaSection, FaqSection, PageHero, PricingSection } from "@/components/s
 export const metadata: Metadata = {
   title: "SMS pricing and credits — SendAfrica",
   description:
-    "Understand SendAfrica SMS credit billing, message parts, API rate limits, and where to check current Tanzanian shilling top-up rates.",
+    "Send SMS for 25 TZS per part with SendAfrica. Understand message segmentation, pay-as-you-go billing, and API request limits.",
   openGraph: {
     title: "SendAfrica SMS pricing and credits",
     description:
@@ -36,8 +36,8 @@ export default function Pricing() {
   return (
     <>
       <PageHero
-        title="Clear credit billing for every SMS part"
-        sub="SendAfrica is pay-as-you-go. One credit is charged for each SMS part; message length and character set determine how many parts a message uses. Check the current TZS rate for your available top-up option before purchasing credits."
+        title="SMS for 25 TZS per part"
+        sub="Pay as you go, with no monthly subscription. Message length and character set determine how many SMS parts a message uses, so longer messages can cost more than one part."
       >
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
