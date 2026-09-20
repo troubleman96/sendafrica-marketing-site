@@ -482,7 +482,7 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
           <SectionHeading
             lead="Pay as you send,"
             highlight="no subscriptions"
-            sub="1 credit = 1 SMS part. Plans set your rate limit — Free 60, Pro 600, Enterprise 6,000 requests per minute."
+            sub="Pay for credits as you send. One credit covers one SMS part; your plan sets the API request limit, not the number of SMS parts in a send."
           />
         )}
         <div className="mt-14 flex justify-center">
@@ -544,14 +544,14 @@ export function PricingSection({ withHeading = true }: { withHeading?: boolean }
                   ))}
                 </ul>
                 <Link
-                  href="/contact"
+                  href="https://app.sendafrica.online/auth/sign-up"
                   className={`btn-sendafrica mt-8 block w-full rounded-xl py-4 text-center font-semibold transition-all duration-200 hover:scale-[1.02] hover:opacity-90 ${
                     plan.highlighted
                       ? "bg-background text-primary"
                       : "bg-[var(--brand)] text-primary-foreground"
                   }`}
                 >
-                  Get started
+                  View in your account
                 </Link>
               </div>
             </Reveal>
@@ -634,24 +634,24 @@ export function CtaSection() {
       />
       <Reveal variant="blur" className="relative container-sendafrica pb-0 pt-24 text-center">
         <h2 className="mx-auto max-w-3xl text-[40px] font-bold leading-[1.06] text-white sm:text-[56px]">
-          Send smarter, <span className="text-white">deliver better.</span>
+          Bring your customer messages together.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base text-black">
-          SMS automation for developers and teams. Get JWT or API-key auth, exact credit billing at
-          just 25Tsh per SMS, and real-time delivery — no subscriptions, no hidden fees.
+          Create an account to manage campaigns, credits, API access, and delivery records. Review
+          the current credit options before sending.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/developers"
+            href="https://app.sendafrica.online/auth/sign-up"
             className="rounded-xl bg-[var(--brand)] px-7 py-3.5 font-semibold text-primary-foreground btn-sendafrica shadow-sendafrica-card hover:opacity-90"
           >
-            Read the API docs
+            Create your account
           </Link>
           <Link
             href="/pricing"
             className="rounded-xl bg-background px-7 py-3.5 font-semibold text-primary btn-sendafrica shadow-sendafrica-card hover:bg-[var(--mist)]"
           >
-            See Pricing
+            See pricing details
           </Link>
         </div>
         <img

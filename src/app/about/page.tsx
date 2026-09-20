@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const metrics = [
-  { value: "25Tsh", label: "Per SMS part" },
+  { value: "1 credit", label: "Per SMS part" },
   { value: "30s", label: "Campaign worker poll interval" },
   { value: "15 min", label: "JWT access token TTL" },
 ];
@@ -35,7 +35,7 @@ export default function About() {
       <PageHero
         title="SMS infrastructure,"
         highlight="built for Africa"
-        sub="SendAfrica started with a simple idea: sending SMS across African mobile networks should be reliable, cheap, and exact. Today thousands of developers send billions of messages through our API."
+        sub="SendAfrica started with a simple idea: give teams in Tanzania practical tools to send, manage, and track customer SMS. The platform brings campaigns, credit billing, and developer integrations into one messaging workflow."
       />
 
       <section className="bg-background py-20">

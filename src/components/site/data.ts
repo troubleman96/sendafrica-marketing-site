@@ -44,11 +44,11 @@ export const features = [
 export const faqs = [
   {
     q: "How much does it cost to send an SMS?",
-    a: "SendAfrica is pay-as-you-go: 1 credit = 1 SMS part, priced at 25Tsh per SMS. Credits are bought in packages from GET /v1/packages, or as a custom voucher amount from GET /v1/vouchers/rate.",
+    a: "SendAfrica is pay-as-you-go: one credit is charged per SMS part. A message can use multiple parts depending on its length and character set. The TZS value per credit depends on the available package or voucher option; review the current rate in your account before topping up.",
   },
   {
     q: "Do you support Nigeria / Kenya / international numbers?",
-    a: "The platform routes through trusted African mobile gateways and is optimized for Tanzania. Phone validation normalizes to E.164 +255 and accepts mobile numbers only — landline prefixes are rejected, and other country codes may be accepted depending on gateway coverage.",
+    a: "Tanzania mobile numbers are supported and normalized to E.164 format. Other destinations depend on the currently published rate card and gateway coverage; check GET /v1/rates before sending internationally.",
   },
   {
     q: "What is an API key and how is it different from logging in?",
@@ -60,11 +60,11 @@ export const faqs = [
   },
   {
     q: "How do I know my messages were delivered?",
-    a: "Delivery reports arrive via signed webhooks and are deduplicated in Redis before updating your message log, so statuses stay accurate even on retries.",
+    a: "A successful send response confirms the provider accepted the message; it does not by itself confirm handset delivery. Delivery reports arrive asynchronously and update the message log. Applications can use signed webhooks to receive those status changes.",
   },
   {
     q: "Can I schedule a message to my whole list?",
-    a: "Yes. Create a campaign against a contact list, optionally set a scheduled_at time, and the worker picks it up on its next 30-second poll. You get live sent/delivered/failed counts as it runs.",
+    a: "Yes. Create a campaign using a contact list and optionally set a scheduled time. Follow campaign progress and recipient statuses from your account as the send runs.",
   },
 ];
 
@@ -102,11 +102,15 @@ export const testimonials = [
 export const plans = [
   {
     eyebrow: "Pay-as-you-go",
-    name: "Free",
-    price: "25Tsh",
+    name: "Pay as you go",
+    price: "1 credit",
     unit: "/ SMS part",
-    note: "No subscriptions, no hidden fees.",
-    features: ["25Tsh per SMS"],
+    note: "The TZS amount per credit is shown with the available package or voucher options in your account.",
+    features: [
+      "One credit per SMS part",
+      "Long and Unicode messages may use multiple parts",
+      "Check current TZS rates before topping up",
+    ],
     highlighted: true,
   },
 ];
@@ -206,34 +210,6 @@ export const popularPosts = [
     slug: "payg-vouchers-tiered-tariffs",
     title: "Pay-as-you-go vouchers and tiered TZS tariffs",
     excerpt: "How custom-amount top-ups compute credits from 35/32/30 TZS-per-credit tiers.",
-    date: "September 1, 2025",
-  },
-];
-
-export const jobs = [
-  {
-    title: "Backend Engineer",
-    body: "Build and harden the SMS automation backend — credit accounting, campaign workers, and Africa's Talking integration. Must care about idempotency, retries, and mobile-money webhooks.",
-    date: "September 1, 2025",
-  },
-  {
-    title: "Frontend Engineer (API-driven dashboard)",
-    body: "Build the user-facing dashboard that talks to the /v1 REST API. Experience with JWT refresh flows, delivery logs, and real-time campaign progress.",
-    date: "September 1, 2025",
-  },
-  {
-    title: "DevRel / Developer Advocate",
-    body: "Write docs and code samples that help developers send their first SMS via our API keys and JWT auth. SMS-AUTOMATION, globally minded.",
-    date: "September 1, 2025",
-  },
-  {
-    title: "Product Manager (Messaging)",
-    body: "Own the roadmap for SMS, campaigns, credits, and payments. Balance Tanzanian mobile-money flows with global gateway reliability.",
-    date: "September 1, 2025",
-  },
-  {
-    title: "Growth Engineer",
-    body: "Instrument delivery analytics, sender-ID lifecycle, and the voucher tier pricing so we can grow with data.",
     date: "September 1, 2025",
   },
 ];

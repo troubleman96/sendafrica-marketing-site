@@ -1,31 +1,34 @@
-import { CtaSection, FaqSection, PageHero, PricingSection } from "@/components/site/sections";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import { CtaSection, FaqSection, PageHero, PricingSection } from "@/components/site/sections";
 
 export const metadata: Metadata = {
-  title: "Pricing — SendAfrica pay-as-you-go SMS",
+  title: "SMS pricing and credits — SendAfrica",
   description:
-    "SendAfrica charges 25Tsh per SMS part. Plans set your rate limit; credits are bought in packages from the API.",
+    "Understand SendAfrica SMS credit billing, message parts, API rate limits, and where to check current Tanzanian shilling top-up rates.",
   openGraph: {
-    title: "Pricing — SendAfrica pay-as-you-go SMS",
-    description: "25Tsh per SMS part. Pro 600, Enterprise 6,000 requests per minute.",
+    title: "SendAfrica SMS pricing and credits",
+    description:
+      "Pay for the SMS credits you use. Learn how message parts are counted and compare API request limits by plan.",
   },
 };
 
 const tiers = [
   {
     plan: "Free",
-    limit: "60 req/min",
-    note: "Good for low-volume development, testing, and small sends.",
+    limit: "60 requests/minute",
+    note: "Useful for development, testing, and lower request volumes.",
   },
   {
     plan: "Pro",
-    limit: "600 req/min",
-    note: "For growing teams sending thousands of messages per minute.",
+    limit: "600 requests/minute",
+    note: "A higher API request allowance for growing integrations.",
   },
   {
     plan: "Enterprise",
-    limit: "6,000 req/min",
-    note: "High throughput with priority support. Contact sales for SLA terms.",
+    limit: "6,000 requests/minute",
+    note: "The highest published request allowance. Ask the team about your workload.",
   },
 ];
 
@@ -33,32 +36,75 @@ export default function Pricing() {
   return (
     <>
       <PageHero
-        title="Pay as you send,"
-        highlight="no subscriptions"
-        sub="1 credit = 1 SMS part. Plans set your rate limit; you only pay for the credits you use."
-      />
+        title="Clear credit billing for every SMS part"
+        sub="SendAfrica is pay-as-you-go. One credit is charged for each SMS part; message length and character set determine how many parts a message uses. Check the current TZS rate for your available top-up option before purchasing credits."
+      >
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="https://app.sendafrica.online/auth/sign-up"
+            className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[var(--brand)] px-6 py-3 font-semibold text-primary-foreground shadow-sendafrica-card transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            View credit options <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
+          <Link
+            href="https://docs.sendafrica.online/guides/phone-numbers"
+            className="inline-flex min-h-12 items-center rounded-xl border border-white/70 bg-white/90 px-6 py-3 font-semibold text-primary transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            Read billing docs
+          </Link>
+        </div>
+      </PageHero>
+
       <PricingSection withHeading={false} />
 
-      <section className="bg-background pb-24">
-        <div className="container-sendafrica">
-          <h2 className="text-center text-[34px] leading-tight text-primary sm:text-[42px]">
-            Plan <span className="text-[var(--brand-bright)]">limits</span>
-          </h2>
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full text-left">
-              <thead className="bg-[var(--mist)]">
+      <section className="bg-[var(--mist)] py-16 sm:py-20">
+        <div className="container-sendafrica grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <div>
+            <h2 className="text-[32px] leading-tight text-primary sm:text-[40px]">
+              Separate your credit cost from your request limit
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Credits cover message parts. Your plan sets how many API requests you can make per
+              minute. A bulk request can include multiple recipients, so request limits are not a
+              message delivery speed guarantee.
+            </p>
+            <Link
+              href="https://sdk.sendafrica.online/docs/rate-limits"
+              className="mt-6 inline-flex items-center gap-2 font-semibold text-[var(--brand-bright)] underline underline-offset-4 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand)]"
+            >
+              Read rate-limit guidance <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="overflow-x-auto border-y border-border">
+            <table className="w-full min-w-[620px] text-left">
+              <caption className="sr-only">
+                API requests allowed per minute by SendAfrica plan
+              </caption>
+              <thead className="bg-white/70">
                 <tr>
-                  <th className="px-6 py-5 text-[15px] font-semibold text-primary">Plan</th>
-                  <th className="px-6 py-5 text-[15px] font-semibold text-primary">Rate limit</th>
-                  <th className="px-6 py-5 text-[15px] font-semibold text-primary">Notes</th>
+                  <th scope="col" className="px-5 py-4 text-sm font-semibold text-primary">
+                    Plan
+                  </th>
+                  <th scope="col" className="px-5 py-4 text-sm font-semibold text-primary">
+                    API request limit
+                  </th>
+                  <th scope="col" className="px-5 py-4 text-sm font-semibold text-primary">
+                    Best fit
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {tiers.map((t) => (
-                  <tr key={t.plan} className="border-t border-border">
-                    <td className="px-6 py-4 text-[15px] font-medium text-primary">{t.plan}</td>
-                    <td className="px-6 py-4 text-[15px] text-[var(--brand-bright)]">{t.limit}</td>
-                    <td className="px-6 py-4 text-[15px] text-muted-foreground">{t.note}</td>
+                {tiers.map((tier) => (
+                  <tr key={tier.plan} className="border-t border-border">
+                    <th scope="row" className="px-5 py-5 text-sm font-semibold text-primary">
+                      {tier.plan}
+                    </th>
+                    <td className="px-5 py-5 text-sm font-medium text-[var(--brand-bright)]">
+                      {tier.limit}
+                    </td>
+                    <td className="px-5 py-5 text-sm leading-relaxed text-muted-foreground">
+                      {tier.note}
+                    </td>
                   </tr>
                 ))}
               </tbody>
