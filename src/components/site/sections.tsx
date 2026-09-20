@@ -80,23 +80,26 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 scale-105 bg-cover bg-center blur-[3px]"
         style={{ backgroundImage: `url(${bg})` }}
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/10 to-background"
+        className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/35 to-slate-950/45"
         aria-hidden
       />
-      <div
-        className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/55 via-black/20 to-transparent"
-        aria-hidden
-      />
-      <Reveal variant="blur" className="relative container-sendafrica pb-24 pt-24 text-center">
-        <h1 className="mx-auto max-w-4xl text-[42px] font-bold leading-[1.05] text-white sm:text-[64px]">
+      <Reveal
+        variant="blur"
+        className="relative container-sendafrica pb-24 pt-24 text-center sm:pb-28 sm:pt-28"
+      >
+        <h1 className="mx-auto max-w-4xl whitespace-pre-line text-[42px] font-bold leading-[1.05] text-white sm:text-[64px]">
           {title} {highlight && <span className="text-white">{highlight}</span>}
         </h1>
-        {sub && <p className="mx-auto mt-6 max-w-2xl text-base text-black sm:text-lg">{sub}</p>}
+        {sub && (
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/95 sm:text-lg">
+            {sub}
+          </p>
+        )}
         {children}
       </Reveal>
     </section>

@@ -98,7 +98,6 @@ export default function Developers() {
         title="Build messaging into"
         highlight="your product"
         sub="Start with one API request, then choose the tools and delivery workflows that fit your stack. SendAfrica provides the REST API, official SDKs, CLI, sandbox, and production guides in one developer journey."
-        bg="/images/sendafrica_sms_api_playground.webp"
       >
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
