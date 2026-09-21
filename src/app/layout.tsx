@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
+import Script from "next/script";
 
 import { Providers } from "./providers";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -35,6 +36,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${outfit.variable} ${GeistMono.variable}`}>
       <body>
+        <Script
+          defer
+          src="https://analytics.camelcreatives.com/tracker.js"
+          data-site="sendafrica"
+        />
         <Providers>
           <SiteLayout>{children}</SiteLayout>
         </Providers>
