@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   return {
     title: `${post.title} — SendAfrica`,
-    description: post.excerpt,
-    openGraph: { title: post.title, description: post.excerpt, images: [post.image], type: "article", publishedTime: new Date(post.date).toISOString() },
+    description: `${post.excerpt} Learn how bulk SMS Tanzania teams can plan reliable messaging with SendAfrica.`,
+    openGraph: { title: post.title, description: `${post.excerpt} Bulk SMS Tanzania guidance from SendAfrica.`, images: [post.image], type: "article", publishedTime: new Date(post.date).toISOString() },
   };
 }
 

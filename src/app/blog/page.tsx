@@ -5,13 +5,13 @@ import { CtaSection, PageHero } from "@/components/site/sections";
 import { blogPosts, featuredPosts, popularPosts } from "@/components/site/blog-data";
 
 export const metadata: Metadata = {
-  title: "SMS API and bulk messaging articles — SendAfrica",
+  title: "Bulk SMS Tanzania guides and SMS API articles — SendAfrica",
   description:
-    "30 practical articles on SMS APIs, bulk SMS, SDKs, campaigns, billing, webhooks, and developer workflows in Tanzania and across supported African networks.",
+    "Guides about bulk SMS Tanzania, SMS marketing, SMS APIs, campaigns, billing, webhooks, and developer workflows across supported African networks.",
   openGraph: {
-    title: "Ideas for developers shipping reliable SMS — SendAfrica",
+    title: "Bulk SMS Tanzania and SMS API guides — SendAfrica",
     description:
-      "Explore practical guides to the SendAfrica SMS API, bulk messaging, SDKs, billing, campaigns, and delivery tracking.",
+      "Explore practical guides to bulk SMS in Tanzania, the SendAfrica SMS API, campaigns, billing, and delivery tracking.",
   },
 };
 

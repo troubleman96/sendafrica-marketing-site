@@ -18,14 +18,22 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sendafrica.online"),
-  title: "SendAfrica — SMS automation API",
+  title: "Bulk SMS Tanzania & SMS automation API | SendAfrica",
   description:
-    "Send SMS across African mobile networks with SendAfrica's REST API. JWT and SA- API keys, idempotent sends, exact credit billing, and real-time delivery tracking.",
+    "Bulk SMS Tanzania made reliable. Send SMS campaigns and automated messages across African mobile networks with SendAfrica's REST API, exact credit billing, and real-time delivery tracking.",
+  keywords: [
+    "bulk SMS Tanzania",
+    "bulk SMS service Tanzania",
+    "SMS marketing Tanzania",
+    "SMS API Tanzania",
+    "Tanzania SMS gateway",
+    "SendAfrica",
+  ],
   authors: [{ name: "SendAfrica" }],
   openGraph: {
-    title: "SendAfrica — SMS automation API",
+    title: "Bulk SMS Tanzania & SMS automation API | SendAfrica",
     description:
-      "REST API for SMS across supported African destinations. JWT and API-key access, credit billing per SMS part, campaigns, and asynchronous delivery reports.",
+      "Bulk SMS Tanzania and SMS automation for businesses and developers. Send campaigns through a reliable REST API with delivery reports and transparent credit billing.",
     url: "https://sendafrica.online",
     siteName: "SendAfrica",
     locale: "en_US",
