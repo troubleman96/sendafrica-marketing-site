@@ -17,6 +17,7 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sendafrica.online"),
   title: "SendAfrica — SMS automation API",
   description:
     "Send SMS across African mobile networks with SendAfrica's REST API. JWT and SA- API keys, idempotent sends, exact credit billing, and real-time delivery tracking.",
@@ -25,11 +26,34 @@ export const metadata: Metadata = {
     title: "SendAfrica — SMS automation API",
     description:
       "REST API for SMS across supported African destinations. JWT and API-key access, credit billing per SMS part, campaigns, and asynchronous delivery reports.",
-    images: ["/SendAfrica-logo.png"],
+    url: "https://sendafrica.online",
+    siteName: "SendAfrica",
+    locale: "en_US",
+    images: [
+      {
+        url: "/SendAfrica-logo.png",
+        width: 512,
+        height: 512,
+        alt: "SendAfrica logo",
+      },
+    ],
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
-  icons: { icon: "/SendAfrica-logo.png" },
+  twitter: {
+    card: "summary_large_image",
+    title: "SendAfrica — SMS automation API",
+    description:
+      "Send SMS across African mobile networks with SendAfrica's REST API.",
+    images: ["/SendAfrica-logo.png"],
+  },
+  alternates: { canonical: "https://sendafrica.online" },
+  icons: {
+    icon: [
+      { url: "/SendAfrica-logo.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/SendAfrica-logo.png", sizes: "512x512" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
