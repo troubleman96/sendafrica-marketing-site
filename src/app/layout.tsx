@@ -56,10 +56,7 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "https://sendafrica.online" },
   icons: {
-    icon: [
-      { url: "/SendAfrica-logo.png", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
+    icon: [{ url: "/SendAfrica-logo.png", type: "image/png", sizes: "512x512" }],
     apple: [{ url: "/SendAfrica-logo.png", sizes: "512x512" }],
   },
 };
