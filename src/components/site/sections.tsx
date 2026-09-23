@@ -679,11 +679,11 @@ export function CtaSection() {
           </Link>
         </div>
         <img
-          src="/images/dashboard.webp"
-          alt="SendAfrica dashboard"
+          src="/images/dashboard-latest.webp"
+          alt="SendAfrica messaging dashboard"
           loading="lazy"
-          width={1200}
-          height={675}
+          width={2000}
+          height={1000}
           className="mx-auto mt-14 w-full max-w-5xl rounded-t-3xl shadow-sendafrica-float"
         />
       </Reveal>
